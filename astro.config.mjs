@@ -10,7 +10,12 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), icon()],
+  integrations: [
+    mdx(), 
+    icon({
+      iconDir: "src/icons"
+    })
+  ],
 
   vite: {
     plugins: [tailwindcss()]

@@ -1,0 +1,14 @@
+---
+type Props = {
+  text: string;
+  url: string;
+  class?: string;
+};
+---
+
+<a href={Astro.props.url}
+  class:list={["text-primary-800 font-bold text-lg px-4", Astro.props.class ?? ""]}
+>
+  {Astro.props.text}
+</a>
+

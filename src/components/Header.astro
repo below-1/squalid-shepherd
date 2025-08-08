@@ -1,15 +1,28 @@
 ---
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
+import NavMenuItem from "./NavMenuItem.astro";
+import SecondaryNavItem from "./SecondaryNavItem.astro";
+import SecondarySocItem from "./SecondarySocItem.astro";
+
+const menus = [
+	{ text: "Beranda", url: "/" },
+	{ text: "Profil", url: "/profil" },
+	{ text: "Publikasi", url: "/publikasi" },
+	{ text: "Layanan", url: "/layanan" },
+	{ text: "Aplikasi", url: "/aplikasi" }
+]
 ---
 
 <header>
-	<div class="h-1 bg-secondary-500 w-full"></div>
-	<div class="bg-primary-600 w-full">
-		<div class="h-8 container mx-auto flex">
-			<div class="">
-
-			</div>
+	<div class="h-1 bg-accent-300 w-full"></div>
+	<div class="bg-primary-700 w-full">
+		<div class="h-8 container mx-auto flex gap-6 text-white">
+			<SecondaryNavItem icon="telephone" content="08178237283" />
+			<SecondaryNavItem icon="email" content="sdsd@bkd.ntt" />
+			<div class="hidden md:block md:grow"></div>
+			<SecondarySocItem url="/asa" text="Instagram" icon="instagram" />
+			<SecondarySocItem url="/asa" text="Gallery" icon="gallery" />
 		</div>
 	</div>
 	<nav>
@@ -32,7 +45,9 @@ import HeaderLink from "./HeaderLink.astro";
 				<div class="hidden md:block md:grow"></div>
 
 				<div class="flex items-center">
-
+					{menus.map((menu, index) => (
+						<NavMenuItem {...menu} class={index == menus.length - 1 ? "pr-0" : ""} />
+					))}
 				</div>
 
 			</div>

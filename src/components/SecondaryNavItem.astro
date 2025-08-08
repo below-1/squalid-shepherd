@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  icon: string;
+  content: string;
+}
+
+const { icon, content } = Astro.props;
+---
+
+<div class="flex items-center gap-2 py-2">
+  <Icon name={icon} class="size-4 text-accent-300" />
+  <div class="text-sm">{content}</div>
+</div>
