@@ -1,0 +1,33 @@
+@import "tailwindcss";
+/* @plugin "@tailwindcss/typography"; */
+
+@theme {
+
+  --color-primary-50: #f1f3ff;
+  --color-primary-100: #e6eaff;
+  --color-primary-200: #d0d8ff;
+  --color-primary-300: #abb7ff;
+  --color-primary-400: #7b87ff;
+  --color-primary-500: #464dff;
+  --color-primary-600: #2420ff;
+  --color-primary-700: #140ef3;
+  --color-primary-800: #100bcc;
+  --color-primary-900: #100ca6;
+  --color-primary-950: #03045e;
+
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #dff2ff;
+  --color-secondary-200: #b9e7fe;
+  --color-secondary-300: #7bd5fe;
+  --color-secondary-400: #34c0fc;
+  --color-secondary-500: #0aa9ed;
+  --color-secondary-600: #0087cb;
+  --color-secondary-700: #0077b6;
+  --color-secondary-800: #055b87;
+  --color-secondary-900: #0a4b70;
+  --color-secondary-950: #07304a;
+
+
+
+
+}
