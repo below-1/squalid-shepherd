@@ -1,0 +1,112 @@
+---
+import { Icon } from "astro-icon/components";
+import CarouselImageItem from "./CarouselImageItem.astro";
+import CarouselPostItem from "./CarouselPostItem.astro";
+import type { CarouselItem } from './types';
+import { mod } from "../../utils/module";
+
+type Props = { 
+  items: CarouselItem[],
+  time?: number;
+};
+
+const { items, ...props } = Astro.props;
+items[0].active = true;
+const time = props.time ?? 3 * 1000;
+---
+
+<div 
+  data-time={time}
+  class="Carousel w-screen relative mx-auto h-128 flex"
+>
+  {items.map(item => {
+    return typeof item.imageUrl === "string" ? (<CarouselImageItem {...item} />) : (<CarouselPostItem {...item} />)
+  })}
+
+  <button
+    class="PrevButton size-16 cursor-pointer bg-black/30 hover:bg-black/50 transition-colors flex items-center justify-center absolute z-10 text-white left-0 top-1/2 bottom-1/2"
+    style="transform: translateY(-50%)"
+  >
+    <Icon name="chevron-left" class="size-8" />
+  </button>
+
+  <button
+    class="NextButton size-16 cursor-pointer bg-black/30 hover:bg-black/50 transition-colors flex items-center justify-center absolute z-10 text-white right-0 top-1/2 bottom-1/2"
+    style="transform: translateY(-50%)"
+  >
+    <Icon name="chevron-right" class="size-8" />
+  </button>
+</div>
+
+<script>
+  export function mod(x: number, n: number) {
+    return ((x % n) + n) % n;
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    // Your JavaScript code here will execute once the DOM is ready.
+    const collection = document.querySelectorAll(".Carousel");
+    for (const element of collection) {
+      const time: number = parseInt((element as any).dataset.time);
+
+      let timeoutId: any = null;
+
+      const prevButton = element.querySelector(".PrevButton");
+      const nextButton = element.querySelector(".NextButton");
+
+      if (!prevButton) {
+        console.log("Can't find previous button");
+        return;
+      }
+      if (!nextButton) {
+        console.log("Can't find next button");
+        return;
+      }
+
+      function moveItem(element: Element, step = 1) {
+        const itemEls = element.querySelectorAll(".CarouselItem");
+        const n = itemEls.length;
+        for (let i = 0; i < n; i++) {
+          const carItem: any = itemEls[i];
+          const isActive = carItem.dataset.active === 'true';
+          if (isActive) {
+            const nextItem: any = itemEls[mod(i + step, n)];
+            nextItem.dataset.active = 'true';
+            carItem.dataset.active = 'false';
+            break;
+          }
+        }
+      }
+
+      prevButton.addEventListener("click", (event) => {
+        moveItem(element, -1);
+        clearSchedule();
+        scheduleNextChange();
+      });
+
+      nextButton.addEventListener("click", (event) => {
+        moveItem(element, 1);
+        clearSchedule();
+        scheduleNextChange();
+      });
+
+      function clearSchedule() {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+      }
+
+      function scheduleNextChange() {
+        timeoutId = setTimeout(() => {
+          moveItem(element, 1);
+          scheduleNextChange();
+          // Check if 
+          // Change to next slide
+        }, time);
+      }
+
+      scheduleNextChange();
+    }
+    console.log(collection[0]);
+});
+</script>

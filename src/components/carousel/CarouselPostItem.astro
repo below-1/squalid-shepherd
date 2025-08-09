@@ -1,0 +1,34 @@
+---
+import type { PostLikeItem } from "./types";
+
+type Props = PostLikeItem & { class?: string };
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  data-active={props.active ? "true" : "false"}
+  class:list={[
+    "CarouselItem group w-full relative object-cover overflow-hidden bg-center bg-cover bg-fixed flex flex-col items-center justify-center",
+    "shrink-0 basis-0 transition-[flex-basis] duration-500 ease-in-out",
+    "data-[active=true]:basis-[100vw]",
+    className && "",
+  ]}
+  style={`background-image: url(${props.image})`}
+>
+  <div
+    class="absolute inset-0 bg-black/10 backdrop-blur-xs group-hover:backdrop-blur-none transition-filter duration-300 ease-in-out"
+  >
+  </div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+    <a
+      href={props.url}
+      class="hover:scale-110 transition-all mt-24 p-8 bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md group-hover:bg-white/20 flex flex-col items-center justify-center duration-300 ease-in-out rounded-lg"
+    >
+      <div class="text-3xl lg:text-6xl font-black">
+        {props.title}
+      </div>
+      <div class="text-lg">{props.subtitle}</div>
+    </a>
+  </div>
+</div>
