@@ -1,0 +1,30 @@
+---
+
+import { format } from 'date-fns';
+
+type Props = {
+  date: Date;
+  title: string;
+}
+
+const props = Astro.props;
+
+const dayOfMonth = format(props.date, "dd")
+const month = format(props.date, "MMMM")
+const year = format(props.date, "yyyy")
+---
+
+<div class="flex gap-8 items-center border p-2 border-neutral-200">
+  <div class="size-24 shrink-0 flex flex-col">
+    <div
+      class="grow bg-neutral-100 py-4 flex flex-col items-center justify-center"
+    >
+      <p class="text-accent-400 font-bold text-3xl">{dayOfMonth}</p>
+      <p class="uppercase text-sm">{month} {year}</p>
+    </div>
+  </div>
+
+  <div class="text-black text-xl">
+    {props.title}
+  </div>
+</div>

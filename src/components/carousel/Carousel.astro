@@ -17,7 +17,7 @@ const time = props.time ?? 3 * 1000;
 
 <div 
   data-time={time}
-  class="Carousel w-screen relative mx-auto h-128 flex"
+  class="Carousel max-w-screen relative h-128 flex"
 >
   {items.map(item => {
     return typeof item.imageUrl === "string" ? (<CarouselImageItem {...item} />) : (<CarouselPostItem {...item} />)
@@ -105,7 +105,7 @@ const time = props.time ?? 3 * 1000;
         }, time);
       }
 
-      scheduleNextChange();
+      // scheduleNextChange();
     }
     console.log(collection[0]);
 });

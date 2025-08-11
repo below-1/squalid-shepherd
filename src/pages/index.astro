@@ -1,15 +1,16 @@
 ---
 import Carousel from "../components/carousel/Carousel.astro";
+import PengumumanItem from "../components/PengumumanItem.astro";
 import Layout from "../layouts/Layout.astro";
 
 const carouselItems = [
-	{ 
-		url: "/foobar",
-		active: false, 
-		title: "Aristop Solle",
-		subtitle: "Istri Terbaik Sedunia, DW no 1",
-		image: "/images/carousel-4.jpg",
-	},
+	// { 
+	// 	url: "/foobar",
+	// 	active: false, 
+	// 	title: "Aristop Solle",
+	// 	subtitle: "Istri Terbaik Sedunia, DW no 1",
+	// 	image: "/images/carousel-4.jpg",
+	// },
 	{ imageUrl: "/images/carousel-1.jpg", active: false, description: "asa" },
 	{ imageUrl: "/images/carousel-2.jpg", active: false, description: "asa" },
 	{ imageUrl: "/images/carousel-3.jpg", active: false, description: "asa" }
@@ -26,7 +27,24 @@ const carouselItems = [
 ---
 
 <Layout>
-	<Carousel items={carouselItems} time={10 * 1000} />
+	<div class="mb-24">
+		<Carousel items={carouselItems} time={10 * 1000} />
+	</div>
+	<section class="container lg:max-w-6xl mx-auto my-36">
+		<h1 class="text-primary-800 text-5xl font-bold text-center mb-12 underline">Pengumuman</h1>
+
+		<div class="flex flex-col gap-8">
+
+			<PengumumanItem
+				date={new Date()}
+				title="Perubahan Hasil Seleksi Kompetensi dan Pemberkasan Pengadaan Pegawai Pemerintah dengan Perjanjian Kerja di Lingkungan Pemerintah"
+			/>
+
+		</div>
+	</section>
+	<section class="my-36">
+		<h1 class="text-primary-800 text-4xl font-bold text-center">Berita Utama</h1>
+	</section>
 	<div class="h-128">
 
 	</div>

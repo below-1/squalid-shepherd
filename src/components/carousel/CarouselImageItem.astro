@@ -6,13 +6,17 @@ type Props = ImageLikeItem & { class?: string };
 const { class: className, ...props } = Astro.props;
 ---
 
-<img 
-  src={props.imageUrl} 
-  data-active={props.active ? "true" : "false"}
+<div
+  data-active={props.active ? 'true' : 'false'}
   class:list={[
-    "CarouselItem w-full object-cover shrink-0 basis-0 transition-[flex-basis] duration-500 ease-in-out",
-    "data-[active=true]:basis-[100vw]",
-    // "data-[active=true]:shrink-0 data-[active=true]:basis-0",
+    "CarouselItem flex transition-[flex-basis] duration-500 ease-in-out overflow-hidden basis-0",
+    // "data-[active=true]:basis-[100vw] data-[active=true]:grow",
+    "data-[active=true]:shrink-0 data-[active=true]:grow data-[active=true]:basis-[100vw]",
     className && ""
   ]}
-/>
+>
+  <img 
+    src={props.imageUrl} 
+    class="grow object-cover h-full"
+  />
+</div>
