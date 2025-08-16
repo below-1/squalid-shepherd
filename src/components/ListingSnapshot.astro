@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  iconName: string;
+  title: string;
+  totalItems: number;
+  listingRef: string;
+  class?: string;
+};
+
+const props = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex items-center justify-center min-h-screen",
+    props.class ?? ""
+  ]}
+>
+  <section
+    class:list={["container lg:max-w-6xl mx-auto my-16", props.class ?? ""]}
+  >
+    <div class="flex items-center gap-2 mb-6">
+      <Icon
+        name={props.iconName}
+        class="size-16 text-primary-800 dark:text-white"
+      />
+      <h1 class="text-primary-800 dark:text-white text-3xl font-bold">
+        {props.title}
+      </h1>
+      <div class="grow"></div>
+      <div
+        class="rounded-xl bg-primary-700 dark:bg-transparent text-white text-lg font-bold flex items-center justify-center px-6 py-2"
+      >
+        {props.totalItems}
+        {props.title}
+      </div>
+    </div>
+
+    <slot />
+  </section>
+</div>

@@ -1,25 +1,28 @@
 ---
 import Carousel from "../components/carousel/Carousel.astro";
+import ListingSnapshot from "../components/ListingSnapshot.astro";
 import PengumumanItem from "../components/PengumumanItem.astro";
 import Layout from "../layouts/Layout.astro";
+import { getLatestPengumumanItems } from '../services/pengumuman';
 
 const carouselItems = [
-	{ 
+	{
 		url: "/foobar",
-		active: false, 
+		active: false,
 		title: "Aristop Solle",
 		subtitle: "Istri Terbaik Sedunia, DW no 1",
-		image: "/images/carousel-4.jpg",
+		image: "/images/carousel-1.png",
 	},
 	{ imageUrl: "/images/carousel-1.jpg", active: false, description: "asa" },
 	{ imageUrl: "/images/carousel-2.jpg", active: false, description: "asa" },
-	{ imageUrl: "/images/carousel-3.jpg", active: false, description: "asa" }
-]
+	{ imageUrl: "/images/carousel-3.jpg", active: false, description: "asa" },
+];
+
+const pengumuman = await getLatestPengumumanItems()
 
 // type Props = {
 // 	items: CarouselItem[];
 // }
-
 
 // const { items } = Astro.props;
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -27,25 +30,51 @@ const carouselItems = [
 ---
 
 <Layout>
-	<div class="mb-24">
-		<Carousel items={carouselItems} time={10 * 1000} />
+	<div>
+		<Carousel 
+			items={carouselItems} 
+			time={10 * 1000}
+			class="h-[calc(100vh-theme(space.24))]"
+		/>
 	</div>
-	<section class="container lg:max-w-6xl mx-auto my-36">
-		<h1 class="text-primary-800 text-5xl font-bold text-center mb-12 underline">Pengumuman</h1>
+	<div class="dark">
+		<ListingSnapshot
+			iconName="announcement"
+			title="Pengumuman"
+			totalItems={pengumuman.total}
+			listingRef="/pengumuman"
+			class="bg-neutral-100 dark:bg-primary-600"
+		>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+				{
+					pengumuman.items.map((item) => (
+						<PengumumanItem
+							date={item.date}
+							id={item.id.toString()}
+							title={item.title}
+							creator={item.creator}
+						/>
+					))
+				}
+			</div>
+			<div class="flex items-center justify-center">
+				<a 
+					href="/pengumuman"
+					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+				>Lihat Selengkapnya</a>
+			</div>
+		</ListingSnapshot>
+	</div>
 
-		<div class="flex flex-col gap-8">
-
-			<PengumumanItem
-				date={new Date()}
-				title="Perubahan Hasil Seleksi Kompetensi dan Pemberkasan Pengadaan Pegawai Pemerintah dengan Perjanjian Kerja di Lingkungan Pemerintah"
-			/>
-
+	<!-- <ListingSnapshot
+		iconName="news"
+		title="Berita"
+		totalItems={pengumuman.total}
+		listingRef="/berita"
+	>
+		<div>
+			
 		</div>
-	</section>
-	<section class="my-36">
-		<h1 class="text-primary-800 text-4xl font-bold text-center">Berita Utama</h1>
-	</section>
-	<div class="h-[600px]">
-
-	</div>
+	</ListingSnapshot> -->
+	<div class="h-[600px]"></div>
 </Layout>

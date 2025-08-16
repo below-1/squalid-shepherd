@@ -8,16 +8,20 @@ import { mod } from "../../utils/module";
 type Props = { 
   items: CarouselItem[],
   time?: number;
+  class?: string;
 };
 
-const { items, ...props } = Astro.props;
+const { items, class: className, ...props } = Astro.props;
 items[0].active = true;
 const time = props.time ?? 3 * 1000;
 ---
 
 <div 
   data-time={time}
-  class="Carousel max-w-screen relative h-128 flex overflow-hidden"
+  class:list={[
+    "Carousel max-w-screen relative flex overflow-hidden",
+    className ?? ""
+  ]}
 >
   {items.map(item => {
     return typeof item.imageUrl === "string" ? (<CarouselImageItem {...item} />) : (<CarouselPostItem {...item} />)
@@ -105,8 +109,7 @@ const time = props.time ?? 3 * 1000;
         }, time);
       }
 
-      // scheduleNextChange();
+      scheduleNextChange();
     }
-    console.log(collection[0]);
 });
 </script>

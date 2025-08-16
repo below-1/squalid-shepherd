@@ -1,30 +1,51 @@
 ---
-
+import { Icon } from "astro-icon/components";
 import { format } from 'date-fns';
+import { id } from 'date-fns/locale';
 
 type Props = {
+  id: string;
   date: Date;
   title: string;
+  creator: string;
 }
 
 const props = Astro.props;
 
-const dayOfMonth = format(props.date, "dd")
-const month = format(props.date, "MMMM")
-const year = format(props.date, "yyyy")
+const dayOfMonth = format(props.date, "dd", { locale: id })
+const month = format(props.date, "MMMM", { locale: id })
+const year = format(props.date, "yyyy", { locale: id })
+const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
 ---
 
-<div class="flex gap-8 items-center border p-2 border-neutral-200 cursor-pointer hover:scale-110 transition-transform">
+<div class="flex gap-8 items-center border-4 box-border p-2 border-neutral-200 dark:border-primary-800 cursor-pointer dark:shadow-neutral-400 hover:border-neutral-300 dark:hover:border-primary-800 hover:shadow-lg transition-all bg-white">
   <div class="size-24 shrink-0 flex flex-col">
     <div
       class="grow bg-neutral-100 py-4 flex flex-col items-center justify-center"
     >
-      <p class="text-accent-400 font-bold text-3xl">{dayOfMonth}</p>
-      <p class="uppercase text-sm">{month} {year}</p>
+      <p class="text-accent-400 font-bold text-2xl">{dayOfMonth}</p>
+      <p class="uppercase text-xs">{month} {year}</p>
     </div>
   </div>
 
-  <div class="text-black text-xl">
-    {props.title}
+  <div class="flex flex-col justify-center gap-2">
+    <div class="text-black font-bold text-lg">
+      {props.title}
+    </div>
+    <div class="flex gap-3 items-center">
+      <div class="flex items-center gap-1">
+        <Icon name="calendar" />
+        <div class="text-sm">{fullDate}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="user" />
+        <div class="text-sm">{props.creator}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="eye" />
+        <div class="text-sm">400</div>
+      </div>
+    </div>
   </div>
+
 </div>
