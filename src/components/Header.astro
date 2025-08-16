@@ -23,32 +23,32 @@ const menus = [
 			<SecondarySocItem url="/asa" text="Gallery" icon="gallery" />
 		</div>
 	</div>
-	<nav>
-		<div class="container mx-auto">
-			<div class="h-20 flex">
-
-				<a href="/" class="flex items-center gap-2">
-					<img
-						class="size-12"
-						src="https://bkd.nttprov.go.id/web/wp-content/uploads/2023/09/cropped-Logo-PemprovNTT.png"
-						alt="BKD Provinsi NTT"
-						decoding="async"
-					/>
-					<div class="flex flex-col">
-						<div class="text-primary-800 uppercase tracking-wider text-lg leading-none font-black">BKD provinsi NTT</div>
-						<div class="text-sm leading-none">Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas</div>
-					</div>
-				</a>
-
-				<div class="hidden md:block md:grow"></div>
-
-				<div class="flex items-center">
-					{menus.map((menu, index) => (
-						<NavMenuItem {...menu} class={index == menus.length - 1 ? "pr-0" : ""} />
-					))}
-				</div>
-
-			</div>
-		</div>
-	</nav>
 </header>
+<nav class="sticky top-0 z-80 bg-white">
+	<div class="container mx-auto">
+		<div class="h-20 flex">
+
+			<a href="/" class="flex items-center gap-2">
+				<img
+					class="size-12"
+					src="https://bkd.nttprov.go.id/web/wp-content/uploads/2023/09/cropped-Logo-PemprovNTT.png"
+					alt="BKD Provinsi NTT"
+					decoding="async"
+				/>
+				<div class="flex flex-col">
+					<div class="text-primary-800 uppercase tracking-wider text-lg leading-none font-black">BKD provinsi NTT</div>
+					<div class="text-sm leading-none">Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas</div>
+				</div>
+			</a>
+
+			<div class="hidden md:block md:grow"></div>
+
+			<div class="flex items-center">
+				{menus.map((menu, index) => (
+					<NavMenuItem {...menu} class={index == menus.length - 1 ? "pr-0" : ""} />
+				))}
+			</div>
+
+		</div>
+	</div>
+</nav>
