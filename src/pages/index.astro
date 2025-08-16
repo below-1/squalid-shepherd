@@ -1,9 +1,12 @@
 ---
+import BeritaItem from "../components/BeritaItem.astro";
 import Carousel from "../components/carousel/Carousel.astro";
 import ListingSnapshot from "../components/ListingSnapshot.astro";
 import Map from "../components/Map.astro";
 import PengumumanItem from "../components/PengumumanItem.astro";
+import YoutubeVideo from "../components/YoutubeVideo.astro";
 import Layout from "../layouts/Layout.astro";
+import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
 
 const carouselItems = [
@@ -20,6 +23,7 @@ const carouselItems = [
 ];
 
 const pengumuman = await getLatestPengumumanItems();
+const berita = await getLatestBeritaItems()
 
 // type Props = {
 // 	items: CarouselItem[];
@@ -38,19 +42,8 @@ const pengumuman = await getLatestPengumumanItems();
 			class="h-[calc(100vh-theme(space.24))]"
 		/>
 	</div>
-	<div
-		class="h-[calc(100vh-theme(space.24))] max-w-screen py-24 bg-neutral-100 dark:bg-black"
-	>
-		<div class="container h-full mx-auto flex items-center justify-center">
-			<iframe
-				class="w-full h-full"
-				src="https://www.youtube.com/embed/VRPbg0zXj-c?si=1Uq68DrMb5MUHjfN"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen></iframe>
-		</div>
+	<div class="dark">
+		<YoutubeVideo />
 	</div>
 	<div class="dark">
 		<ListingSnapshot
@@ -82,16 +75,35 @@ const pengumuman = await getLatestPengumumanItems();
 		</ListingSnapshot>
 	</div>
 
-	<!-- <ListingSnapshot
-		iconName="news"
-		title="Berita"
-		totalItems={pengumuman.total}
-		listingRef="/berita"
-	>
-		<div>
-			
-		</div>
-	</ListingSnapshot> -->
+	<div class="">
+		<ListingSnapshot
+			iconName="news"
+			title="Berita"
+			totalItems={pengumuman.total}
+			listingRef="/berita"
+			class="bg-neutral-100 dark:bg-primary-600"
+		>
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+				{berita.items.map(item => (
+					<BeritaItem
+						date={item.date}
+						id={item.id.toString()}
+						title={item.title}
+						creator={item.creator}
+						image={item.image}
+					/>
+				))}
+			</div>
+			<div class="flex items-center justify-center">
+				<a
+					href="/berita"
+					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+					>Lihat Selengkapnya</a
+				>
+			</div>
+		</ListingSnapshot>
+	</div>
+
 	<div class="h-[600px]"></div>
 
 	<Map />
