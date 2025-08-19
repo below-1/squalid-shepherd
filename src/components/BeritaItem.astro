@@ -19,11 +19,11 @@ const year = format(props.date, "yyyy", { locale: id })
 const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
 ---
 
-<div class="flex gap-8 items-center border-4 box-border p-2 border-neutral-200 dark:border-primary-800 cursor-pointer dark:shadow-neutral-400 hover:border-neutral-300 dark:hover:border-primary-500 hover:shadow-xl transition-all bg-white">
+<div class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white">
   <img src={props.image} class="size-24 shrink-0 flex flex-col" />
 
   <div class="flex flex-col justify-center gap-2">
-    <div class="text-black font-bold text-lg">
+    <div class="text-black font-black text-lg underline group-hover:text-primary-600">
       {props.title}
     </div>
     <div class="flex gap-3 items-center">

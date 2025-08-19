@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
+
+type Props = {
+  id: string;
+  date: Date;
+  title: string;
+  creator: string;
+  image: string;
+  class?: string;
+};
+
+const props = Astro.props;
+
+const dayOfMonth = format(props.date, "dd", { locale: id });
+const month = format(props.date, "MMMM", { locale: id });
+const year = format(props.date, "yyyy", { locale: id });
+const fullDate = format(props.date, "dd MMMM yyyy", { locale: id });
+---
+
+<div
+  class:list={[
+    "flex flex-col gap-4 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white",
+    "group",
+    props.class ?? "",
+  ]}
+>
+  <div class="grow flex items-start justify-center w-full relative overflow-hidden">
+    <img src={props.image} class="object-cover h-[250px] w-full" />
+  </div>
+
+  <div class="flex flex-col justify-center items-start gap-2">
+    <div class="text-black font-bold text-lg underline group-hover:text-primary-900">
+      {props.title}
+    </div>
+    <div class="flex gap-3 items-center text-sm">
+      <div class="flex items-center gap-1">
+        <Icon name="calendar" />
+        <div class="">{fullDate}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="user" />
+        <div class="">{props.creator}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="eye" />
+        <div class="">400</div>
+      </div>
+    </div>
+  </div>
+</div>

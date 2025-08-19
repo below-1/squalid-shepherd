@@ -1,20 +1,25 @@
 ---
 import BeritaItem from "../components/BeritaItem.astro";
 import Carousel from "../components/carousel/Carousel.astro";
+import { Icon } from "astro-icon/components";
 import ListingSnapshot from "../components/ListingSnapshot.astro";
 import Map from "../components/Map.astro";
 import PengumumanItem from "../components/PengumumanItem.astro";
 import YoutubeVideo from "../components/YoutubeVideo.astro";
-import Layout from "../layouts/ParallaxLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
+import { getGallerySnapshoot } from "../services/gallery"
+import BeritaItemVertical from "../components/BeritaItemVertical.astro";
+import { Image } from "astro:assets";
 
 const carouselItems = [
 	{
 		url: "/foobar",
 		active: false,
-		title: "Aristop Solle",
-		subtitle: "Istri Terbaik Sedunia, DW no 1",
+		title:
+			"Peningkatan Kompetensi PNS Melalui Pendidikan Formal di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur",
+		subtitle: "Lorem Ipsum Doler Sit Amet",
 		image: "/images/carousel-1.png",
 	},
 	{ imageUrl: "/images/carousel-1.jpg", active: false, description: "asa" },
@@ -23,7 +28,20 @@ const carouselItems = [
 ];
 
 const pengumuman = await getLatestPengumumanItems();
-const berita = await getLatestBeritaItems()
+const berita = await getLatestBeritaItems();
+
+
+
+const apps = [
+	{ icon: "dashboard", label: "Dashboard", url: "http://aplikasi.bkd.nttprov.go.id/" },
+	{ icon: "assessment", label: "Assessment Center", url: "https://ac.bkd.nttprov.go.id/" },
+	{ icon: "people", label: "Simpeg", url: "http://aplikasi.bkd.nttprov.go.id/simpeg" },
+	{ icon: "app", label: "Sipora", url: "https://bkd.nttprov.go.id/web/laporan/" },
+	{ icon: "form", label: "Survey Kepuasan", url: "https://docs.google.com/forms/d/e/1FAIpQLSfpoi9QZAFGg-ha6q5xDAWwvMVYTl7O1e4dqBUJXocHFvpIQA/viewform" },
+	{ icon: "device", label: "Gawai", url: "https://gawai.bkd.nttprov.go.id/" },
+]
+
+const gallerySnapshoot = await getGallerySnapshoot()
 
 // type Props = {
 // 	items: CarouselItem[];
@@ -34,24 +52,35 @@ const berita = await getLatestBeritaItems()
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+
+	.cookie-regular {
+		font-family: "Cookie", cursive;
+		font-weight: 800;
+		font-style: normal;
+	}
+</style>
+
 <Layout>
-	<div>
-		<Carousel
-			items={carouselItems}
-			time={10 * 1000}
-			class="h-[calc(100vh-theme(space.24))]"
-		/>
+	<div class="container mx-auto py-8 space-y-8">
+		<Carousel items={carouselItems} time={10 * 1000} class="h-[700px]" />
+		<div
+			class="w-full bg-accent-100 flex items-center justify-center flex-col text-primary-800 py-24 border border-neutral-200"
+		>
+			<p class="cookie-regular text-6xl md:max-w-3/5 font-bold text-center">
+				Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Berintegritas, Tulus,
+				dan Ikhlas
+			</p>
+		</div>
 	</div>
-	<div class="dark">
-		<YoutubeVideo />
-	</div>
-	<div class="dark">
+
+	<div class="bg-neutral-50">
 		<ListingSnapshot
 			iconName="announcement"
-			title="Pengumuman"
+			title="Kilasan Pengumuman"
 			totalItems={pengumuman.total}
 			listingRef="/pengumuman"
-			class="bg-neutral-100 dark:bg-primary-600"
 		>
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 				{
@@ -75,24 +104,151 @@ const berita = await getLatestBeritaItems()
 		</ListingSnapshot>
 	</div>
 
+	<!-- Daftar Layanan -->
+	<div>
+		<ListingSnapshot
+			iconName="announcement"
+			title="Daftar Layanan"
+			listingRef="/layanan"
+		>
+			<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-2">
+				{apps.map(app => (
+					<a 
+						href={app.url}
+						class="group bg-neutral-100 h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
+						title={app.label}
+					>
+						<div class="grow grid items-center justify-center">
+							<Icon name={app.icon} class="size-32 group-hover:text-primary-600" />
+						</div>
+						<p class="font-black text-center underline group-hover:text-primary-600">{app.label}</p>
+					</a>
+				))}
+			</div>
+		</ListingSnapshot>
+	</div>
+
+	<!-- Sekilas Tentang BKD -->
+	<div>
+		<ListingSnapshot
+			iconName="announcement"
+			title="Tentang BKD"
+			listingRef="/layanan"
+		>
+			<div class="text-xl leading-8 space-y-6">
+				<p>
+					Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur lahir sebagai konsekuensi pelaksanaan otonomi daerah dengan ditetapkannya Undang-Undang Nomor 32 tahun 2004 tentang Pemerintahan Daerah, dimana dalam salah satu pasalnya mengisyaratkan adanya kewenangan pelaksanaan manajemen kepegawaian daerah.
+				</p>
+				<p>
+					Menindaklanjuti pelaksanaan otonomi daerah maka penataan organisasi perangkat daerah di lingkungan Pemerintah Provinsi Nusa Tenggara Timur yang menempatkan fungsi manajemen kepegawaian yang semula dilaksanakan oleh Biro Kepegawaian Daerah Sekretariat Daerah Provinsi Nusa Tenggara Timur, dialihkan menjadi lembaga tersendiri yang melaksanakan fungsi manajemen kepegawaian yaitu Badan Kepegawaian Daerah.
+				</p>
+			</div>
+		</ListingSnapshot>
+	</div>
+
+
+	<div>
+		<ListingSnapshot
+			iconName="news"
+			title="Daftar Video"
+			listingRef="/"
+			class=""
+		>
+			<div class="grid grid-cols-12 gap-4">
+				<div class="col-span-8">
+					<div class="h-[550px] w-auto bg-neutral-100 dark:bg-black">
+						<div
+							class="container h-full mx-auto flex items-center justify-center"
+						>
+							<iframe
+								class="w-full h-full"
+								src="https://www.youtube.com/embed/VRPbg0zXj-c?si=1Uq68DrMb5MUHjfN"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-span-4 flex flex-col gap-4">
+					<div class="h-full w-full bg-neutral-100 dark:bg-black">
+						<div
+							class="container h-full mx-auto flex items-center justify-center"
+						>
+							<iframe
+								class="w-full h-full"
+								src="https://www.youtube.com/embed/niZ8nm9Dmvk?si=8EjAEvvSqhwFQ8og"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+
+					<div class="h-full w-full bg-neutral-100 dark:bg-black">
+						<div
+							class="container h-full mx-auto flex items-center justify-center"
+						>
+							<iframe
+								class="w-full h-full"
+								src="https://www.youtube.com/embed/Nixn2Q88b4k?si=XGJmVp8nUcdupWWR"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+
+					<div class="h-full w-full bg-neutral-100 dark:bg-black">
+						<div
+							class="container h-full mx-auto flex items-center justify-center"
+						>
+							<iframe
+								class="w-full h-full"
+								src="https://www.youtube.com/embed/VRPbg0zXj-c?si=1Uq68DrMb5MUHjfN"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex items-center justify-center my-8">
+				<a
+					href="/"
+					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+					>Lihat Selengkapnya</a
+				>
+			</div>
+		</ListingSnapshot>
+	</div>
+
 	<div class="">
 		<ListingSnapshot
 			iconName="news"
-			title="Berita"
-			totalItems={pengumuman.total}
+			title="Kilasan Berita"
+			totalItems={berita.total}
 			listingRef="/berita"
-			class="bg-neutral-100 dark:bg-primary-600"
+			class=""
 		>
-			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-				{berita.items.map(item => (
-					<BeritaItem
-						date={item.date}
-						id={item.id.toString()}
-						title={item.title}
-						creator={item.creator}
-						image={item.image}
-					/>
-				))}
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+				{
+					berita.items.map((item) => (
+						<BeritaItem
+							date={item.date}
+							id={item.id.toString()}
+							title={item.title}
+							creator={item.creator}
+							image={item.image}
+						/>
+					))
+				}
 			</div>
 			<div class="flex items-center justify-center">
 				<a
@@ -104,7 +260,30 @@ const berita = await getLatestBeritaItems()
 		</ListingSnapshot>
 	</div>
 
-	<div class="h-[600px]"></div>
+	<div>
+		<ListingSnapshot
+			iconName="announcement"
+			title="Daftar Foto"
+			listingRef="/gallery"
+		>
+			<div class="grid grid-cols-4 gap-2">	
+				{gallerySnapshoot.items.map(item => (
+					<Image
+						src={item.image()}
+						alt={item.description}
+						class="w-full h-64 object-cover"
+					/>
+				))}
+			</div>
+			<div class="flex items-center justify-center py-8">
+				<a
+					href="/gallery"
+					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+					>Lihat Selengkapnya</a
+				>
+			</div>
+		</ListingSnapshot>
+	</div>
 
 	<Map />
 </Layout>

@@ -19,7 +19,8 @@ const time = props.time ?? 3 * 1000;
 <div 
   data-time={time}
   class:list={[
-    "Carousel max-w-screen relative flex overflow-hidden",
+    "Carousel w-full relative flex overflow-hidden",
+    "border-box border-6 border-primary-600",
     className ?? ""
   ]}
 >
@@ -40,6 +41,11 @@ const time = props.time ?? 3 * 1000;
   >
     <Icon name="chevron-right" class="size-8" />
   </button>
+  <div class="bg-primary-700 text-white absolute inset-x-0 bottom-0 h-24 flex">
+    <div id="CarouselActiveTitle" class="w-full text-center text-xl font-black flex items-center justify-center">
+      {items[0].imageUrl ? (items[0] as any).description : (items[0] as any).title}
+    </div>
+  </div>
 </div>
 
 <script>
@@ -77,6 +83,10 @@ const time = props.time ?? 3 * 1000;
             const nextItem: any = itemEls[mod(i + step, n)];
             nextItem.dataset.active = 'true';
             carItem.dataset.active = 'false';
+            const titleEl = document.getElementById("CarouselActiveTitle");
+            if (titleEl) {
+              titleEl.innerHTML = nextItem.dataset.title;
+            }
             break;
           }
         }

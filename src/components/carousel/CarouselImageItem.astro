@@ -8,6 +8,7 @@ const { class: className, ...props } = Astro.props;
 
 <div
   data-active={props.active ? 'true' : 'false'}
+  data-title={props.description}
   class:list={[
     "CarouselItem flex transition-[flex-basis] duration-500 ease-in-out overflow-hidden basis-0",
     // "data-[active=true]:basis-[100vw] data-[active=true]:grow",
