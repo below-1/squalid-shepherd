@@ -28,10 +28,8 @@
   --color-accent-800: #9b2d11;
   --color-accent-900: #7d2811;
   --color-accent-950: #441106;
+}
 
-
-
-
-
-
+a:focus, button:focus {
+  @apply outline-4 outline-offset-2 outline-primary-800 outline-dashed;
 }

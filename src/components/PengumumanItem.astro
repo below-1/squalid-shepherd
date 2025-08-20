@@ -18,8 +18,8 @@ const year = format(props.date, "yyyy", { locale: id })
 const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
 ---
 
-<div class="group flex gap-8 items-center cursor-pointer transition-all bg-white">
-  <div class="size-24 shrink-0 flex flex-col">
+<a href={`/pengumuman/${props.id}`} class="group flex gap-8 items-center cursor-pointer transition-all bg-white">
+  <div class="w-28 h-24 shrink-0 flex flex-col">
     <div
       class="grow bg-neutral-100 py-4 flex flex-col items-center justify-center"
     >
@@ -29,7 +29,7 @@ const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
   </div>
 
   <div class="flex flex-col justify-center gap-2">
-    <div class="text-black font-black text-lg underline group-hover:text-primary-600">
+    <div class="text-black font-black text-lg underline group-hover:text-primary-600 group-focus:text-primary-600 group-active:text-primary-500">
       {props.title}
     </div>
     <div class="flex gap-3 items-center">
@@ -48,4 +48,4 @@ const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
     </div>
   </div>
 
-</div>
+</a>
