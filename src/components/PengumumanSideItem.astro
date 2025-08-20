@@ -8,7 +8,6 @@ type Props = {
   date: Date;
   title: string;
   creator: string;
-  hideSecondLine?: boolean;
 }
 
 const props = Astro.props;
@@ -19,7 +18,7 @@ const year = format(props.date, "yyyy", { locale: id })
 const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
 ---
 
-<a href={`/pengumuman/${props.id}`} class="group flex gap-8 items-center cursor-pointer transition-all bg-white">
+<a href={`/pengumuman/${props.id}`} class="group flex gap-4 items-center cursor-pointer  bg-white opacity-70 hover:opacity-100 transition-all">
   <div class="w-28 h-24 shrink-0 flex flex-col">
     <div
       class="grow bg-neutral-100 py-4 flex flex-col items-center justify-center"
@@ -30,25 +29,9 @@ const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
   </div>
 
   <div class="flex flex-col justify-center gap-2">
-    <div class="text-black font-black text-lg underline group-hover:text-primary-600 group-focus:text-primary-600 group-active:text-primary-500">
+    <div class="text-black text-lg underline group-hover:text-primary-600 group-focus:text-primary-600 group-active:text-primary-500 line-clamp-3">
       {props.title}
     </div>
-    {!props.hideSecondLine && (
-      <div class="flex gap-3 items-center">
-        <div class="flex items-center gap-1">
-          <Icon name="calendar" />
-          <div class="">{fullDate}</div>
-        </div>
-        <div class="flex items-center gap-1">
-          <Icon name="user" />
-          <div class="">{props.creator}</div>
-        </div>
-        <div class="flex items-center gap-1">
-          <Icon name="eye" />
-          <div class="">400</div>
-        </div>
-      </div>
-    )}
   </div>
 
 </a>

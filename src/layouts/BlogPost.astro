@@ -5,10 +5,19 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { Icon } from 'astro-icon/components';
+import { getLatestBeritaItems } from "../services/berita";
+import { getLatestPengumumanItems } from "../services/pengumuman";
+import ListingSnapshot from "../components/ListingSnapshot.astro";
+import PengumumanSideItem from "../components/PengumumanSideItem.astro";
+import BeritaSideItem from "../components/BeritaSideItem.astro";
 
 type Props = CollectionEntry<'news'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const pengumuman = await getLatestPengumumanItems();
+const berita = await getLatestBeritaItems(6);
 ---
 
 <html lang="en">
@@ -18,30 +27,108 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
+		<div class="container lg:max-w-7xl mx-auto my-8 space-y-8">
+			<div class="flex gap-2 items-center">
+				<a href="/" class="underline">Home</a>
+				<Icon name="chevron-right" class="size-6 text-neutral-500" />
+				<a href="/" class="underline">Berita</a>
+				<Icon name="chevron-right" class="size-6 text-neutral-500" />
+				<span>{title}</span>
+			</div>
+
+			<div class="grid grid-cols-12 md:gap-8 lg:gap-12">
+				<main class="col-span-12 md:col-span-8 space-y-8">
+					
+					<div class="w-full">
+						{heroImage && <Image src={heroImage} class="object-cover w-full h-[400px]" alt="" />}
 					</div>
-					<slot />
+	
+					<article>
+						<div class="prose lg:prose-lg max-w-none">
+							<div class="title">
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{
+										updatedDate && (
+											<div class="last-updated-on">
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)
+									}
+								</div>
+								<div class="flex gap-4">
+									<div>Ditulis Oleh: </div>
+									<div class="font-bold">
+										Admin BKD
+									</div>
+								</div>
+								<h1>{title}</h1>
+								<hr />
+							</div>
+							<slot />
+						</div>
+					</article>
+				</main>
+				<div class="col-span-12 md:col-span-4">
+
+					<div class="space-y-10 sticky top-32">
+						<!-- Kilasan Pengumuman -->
+						<div class="space-y-6">
+							<div class="border-l-4 border-accent-400 pl-2 font-bold text-lg">Kilasan Pengumuman</div>
+	
+							<div class="grid grid-cols-1 gap-4">
+								{
+									pengumuman.items.map((item) => (
+										<PengumumanSideItem
+											date={item.date}
+											id={item.id.toString()}
+											title={item.title}
+											creator={item.creator}
+										/>
+									))
+								}
+							</div>
+							<div class="flex items-center justify-center">
+								<a
+									href="/pengumuman"
+									class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+									>Lihat Selengkapnya</a
+								>
+							</div>
+						</div>
+	
+						<!-- Kilasan Berita -->
+						<div class="space-y-6">
+							<div class="border-l-4 border-accent-400 pl-2 font-bold text-lg">Kilasan Berita</div>
+	
+							<div class="grid grid-cols-1 gap-4">
+								{
+									berita.items.map((item) => (
+										<BeritaSideItem
+											date={item.date}
+											id={item.id.toString()}
+											title={item.title}
+											creator={item.creator}
+											image={item.image}
+										/>
+									))
+								}
+							</div>
+							<div class="flex items-center justify-center">
+								<a
+									href="/pengumuman"
+									class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
+									>Lihat Selengkapnya</a
+								>
+							</div>
+						</div>
+					</div>
+
+
+	
 				</div>
-			</article>
-		</main>
+			</div>
+		</div>
 		<Footer />
 	</body>
 </html>

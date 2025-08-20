@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import { format } from 'date-fns';
+import { id } from 'date-fns/locale';
+
+type Props = {
+  id: string;
+  date: Date;
+  title: string;
+  creator: string;
+  image: string;
+}
+
+const props = Astro.props;
+
+const dayOfMonth = format(props.date, "dd", { locale: id })
+const month = format(props.date, "MMMM", { locale: id })
+const year = format(props.date, "yyyy", { locale: id })
+const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
+---
+
+<a href={`/news/${props.id}`} class="group flex gap-4 items-center cursor-pointer dark:shadow-neutral-400 bg-white opacity-70 hover:opacity-100 transition-all">
+  <img src={props.image} class="w-28 h-24 shrink-0 flex flex-col" />
+
+  <div class="flex flex-col justify-center gap-2">
+    <div class="text-black underline group-hover:text-primary-800 group-focus:text-primary-700 group-active:text-primary-500 line-clamp-3">
+      {props.title}
+    </div>
+  </div>
+
+</a>
