@@ -4,7 +4,7 @@ title: Keputusan Peserta Lulus Pada Penentuan Kelulusan Akhir Seleksi Penerimaan
 date: 2024-09-03T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_3666.jpeg
+coverImage: ./images/IMG_3666.jpeg
 
 ---
 

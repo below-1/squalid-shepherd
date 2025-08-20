@@ -3,7 +3,7 @@ title: Kanreg X BKN Gelar Rakor dengan Tema Netralitas ASN Jelang Kontestasi Pol
 date: 2023-11-02T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-rakornetralirasasn.jpg
+coverImage: ./images/bkdntt-rakornetralirasasn.jpg
 
 ---
 

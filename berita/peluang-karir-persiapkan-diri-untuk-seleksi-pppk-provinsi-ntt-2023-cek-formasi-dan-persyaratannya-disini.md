@@ -4,7 +4,7 @@ title: Peluang Karir! Persiapkan Diri untuk Seleksi PPPK Provinsi NTT 2023, Cek
 date: 2023-09-19T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkd-ntt-test-praja-ipdn-2022.jpeg
+coverImage: ./images/bkd-ntt-test-praja-ipdn-2022.jpeg
 
 ---
 

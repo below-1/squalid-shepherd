@@ -3,7 +3,7 @@ title: Rentang Waktu Pendaftaran Seleksi PPPK Guru TA 2023
 date: 2023-09-22T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/Rentang-Waktu-Pendaftaran-Seleksi-PPPK-Guru-TA-2023.png
+coverImage: ./images/Rentang-Waktu-Pendaftaran-Seleksi-PPPK-Guru-TA-2023.png
 
 ---
 

@@ -3,7 +3,7 @@ title: “Sersan BUP” Hasilkan Langkah Percepatan Layanan Pensiun Pegawai
 date: 2024-06-26T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-2024-article-01-072.jpg
+coverImage: ./images/bkdntt-2024-article-01-072.jpg
 
 ---
 

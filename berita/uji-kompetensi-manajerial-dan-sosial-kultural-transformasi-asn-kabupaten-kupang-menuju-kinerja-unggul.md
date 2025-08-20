@@ -4,7 +4,7 @@ title: '"Uji Kompetensi Manajerial dan Sosial Kultural: Transformasi ASN
 date: 2024-03-26T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/3.bkdntt-pemetaankab-kupang.jpeg
+coverImage: ./images/3.bkdntt-pemetaankab-kupang.jpeg
 
 ---
 

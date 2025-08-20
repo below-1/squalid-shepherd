@@ -4,7 +4,7 @@ title: Pengumuman Penetapan Hasil Sanggah Seleksi Administrasi PPPK Tahap I
 date: 2024-11-11T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/pengunguman-hasilsanggah-pppk-tahap1-2024-1.jpg
+coverImage: ./images/pengunguman-hasilsanggah-pppk-tahap1-2024-1.jpg
 
 ---
 

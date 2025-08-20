@@ -4,7 +4,7 @@ title: Pengumuman Hasil Seleksi Administrasi PPPK Tahap II Lingkup Pemerintah
 date: 2025-02-16T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_5547.jpeg
+coverImage: ./images/IMG_5547.jpeg
 
 ---
 

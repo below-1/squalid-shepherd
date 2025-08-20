@@ -4,7 +4,7 @@ title: Pengumuman Jadwal Pelaksanaan Tes Psikologi, Integritas, dan Kejujuran
 date: 2024-08-16T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/tespsikologi-integritas-kejujuran.png
+coverImage: ./images/tespsikologi-integritas-kejujuran.png
 
 ---
 

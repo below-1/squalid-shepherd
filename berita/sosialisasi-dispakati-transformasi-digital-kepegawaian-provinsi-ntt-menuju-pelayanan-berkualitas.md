@@ -4,7 +4,7 @@ title: "Sosialisasi DISPAKATI: Transformasi Digital Kepegawaian Provinsi NTT
 date: 2023-11-03T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-sosialisasi-dispakati.jpg
+coverImage: ./images/bkdntt-sosialisasi-dispakati.jpg
 
 ---
 

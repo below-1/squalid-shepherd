@@ -3,7 +3,7 @@ title: Merawat Budaya Tulis di Tengah Zaman yang Terus Berubah
 date: 2023-12-16T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-merawatbudayatulis.jpg
+coverImage: ./images/bkdntt-merawatbudayatulis.jpg
 
 ---
 

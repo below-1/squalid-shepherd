@@ -3,7 +3,7 @@ title: Panduan Digital (E-book) Peminjaman Arsip
 date: 2023-12-05T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/Panduan-Digital-Peminjaman-Arsip-e1701735905653.png
+coverImage: ./images/Panduan-Digital-Peminjaman-Arsip-e1701735905653.png
 
 ---
 

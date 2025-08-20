@@ -8,7 +8,7 @@ tags:
   - pppk
   - pppk2023
   - pppkguru
-coverImage: /images/migrated/flyer-sipcuti-e1697457690833.jpeg
+coverImage: ./images/flyer-sipcuti-e1697457690833.jpeg
 
 ---
 

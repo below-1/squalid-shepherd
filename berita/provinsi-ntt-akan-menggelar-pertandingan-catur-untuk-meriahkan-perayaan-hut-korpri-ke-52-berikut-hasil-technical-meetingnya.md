@@ -4,7 +4,7 @@ title: Provinsi NTT akan Menggelar Pertandingan Catur untuk Meriahkan Perayaan
 date: 2023-11-07T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkd-ntt-catur-teknikal-meeting.webp
+coverImage: ./images/bkd-ntt-catur-teknikal-meeting.webp
 
 ---
 

@@ -3,7 +3,7 @@ title: Perjanjian Kinerja Tahun 2022 Badan Kepegawaian Daerah Provinsi NTT
 date: 2022-02-23T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/1.-pk-bkdntt-2022.jpg
+coverImage: ./images/1.-pk-bkdntt-2022.jpg
 
 ---
 

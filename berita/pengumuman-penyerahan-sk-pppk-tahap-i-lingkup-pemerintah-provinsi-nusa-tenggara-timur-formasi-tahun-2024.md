@@ -8,7 +8,7 @@ tags:
   - bkdntt
   - pppk2023
   - provinsintt
-coverImage: /images/migrated/Screenshot-2025-08-04-094946.png
+coverImage: ./images/Screenshot-2025-08-04-094946.png
 
 ---
 

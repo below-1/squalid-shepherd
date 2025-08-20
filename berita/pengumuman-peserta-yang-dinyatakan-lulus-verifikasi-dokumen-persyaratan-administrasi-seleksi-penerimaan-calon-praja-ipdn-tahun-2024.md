@@ -4,7 +4,7 @@ title: "PENGUMUMAN: Peserta Yang Dinyatakan Lulus Verifikasi Dokumen Persyaratan
 date: 2024-06-19T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/19-pengumumanseleksi-administrasi-spcp-ipdn-2024.jpg
+coverImage: ./images/19-pengumumanseleksi-administrasi-spcp-ipdn-2024.jpg
 
 ---
 

@@ -4,7 +4,6 @@ title: Pengumuman Hasil Sanggah Seleksi Administrasi Seleksi CPNS Pemerintah
 date: 2024-09-25T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/bkdntt-hasilsanggah-cpnsntt-2024.png
 
 ---
 

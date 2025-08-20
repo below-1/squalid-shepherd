@@ -3,7 +3,7 @@ title: PNS Mau Lanjut Kuliah S2 dan S3 Dengan Beasiswa LPDP? ini syaratnya
 date: 2023-12-19T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-syaratbeasiswa-lpdp-1.jpg
+coverImage: ./images/bkdntt-syaratbeasiswa-lpdp-1.jpg
 
 ---
 

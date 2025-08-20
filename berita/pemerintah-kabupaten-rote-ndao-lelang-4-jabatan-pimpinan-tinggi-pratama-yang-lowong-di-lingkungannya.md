@@ -4,7 +4,7 @@ title: Pemerintah  Kabupaten Rote Ndao lelang 4 Jabatan Pimpinan Tinggi Pratama
 date: 2023-08-04T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-selterkabrote-2023.jpg
+coverImage: ./images/bkdntt-selterkabrote-2023.jpg
 
 ---
 

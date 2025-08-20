@@ -3,7 +3,7 @@ title: Surat Edaran Pelaksanaan Seleksi Penerimaan Calon Praja IPDN
 date: 2024-05-20T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/bkdntt-spcp2024.png
+coverImage: ./images/bkdntt-spcp2024.png
 
 ---
 

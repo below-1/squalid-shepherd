@@ -4,7 +4,7 @@ title: "Selter JPTP, Wakil Bupati Sumba Tengah Menegaskan: Pemilihan Pemimpin
 date: 2023-09-24T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/selter-sumba-tengah.jpg
+coverImage: ./images/selter-sumba-tengah.jpg
 
 ---
 

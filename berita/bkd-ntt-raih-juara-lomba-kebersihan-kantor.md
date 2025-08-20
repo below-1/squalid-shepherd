@@ -3,7 +3,7 @@ title: BKD NTT Raih Juara Lomba Kebersihan Kantor
 date: 2023-12-21T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-juaralombakebersihan.jpg
+coverImage: ./images/bkdntt-juaralombakebersihan.jpg
 
 ---
 

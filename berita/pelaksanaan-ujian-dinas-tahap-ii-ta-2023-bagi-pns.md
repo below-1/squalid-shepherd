@@ -11,7 +11,7 @@ tags:
   - pns
   - provinsintt
   - ujiandinas
-coverImage: /images/migrated/udprovinsintt-2023.jpg
+coverImage: ./images/udprovinsintt-2023.jpg
 
 ---
 

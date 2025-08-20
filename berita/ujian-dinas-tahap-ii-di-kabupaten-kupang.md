@@ -3,7 +3,7 @@ title: Ujian Dinas Tahap II Di Kabupaten Kupang
 date: 2023-11-22T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-udkabkupang-tahapII2023.jpg
+coverImage: ./images/bkdntt-udkabkupang-tahapII2023.jpg
 
 ---
 

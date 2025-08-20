@@ -3,7 +3,7 @@ title: Mengadaptasi Perkembangan Teknologi dalam Penyusunan Simulasi
 date: 2023-12-14T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-teknologidalamsimulasi.jpg
+coverImage: ./images/bkdntt-teknologidalamsimulasi.jpg
 
 ---
 

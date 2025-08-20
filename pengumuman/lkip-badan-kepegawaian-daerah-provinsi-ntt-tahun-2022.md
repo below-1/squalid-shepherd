@@ -1,0 +1,9 @@
+---
+title: LKIP Badan Kepegawaian Daerah Provinsi NTT Tahun 2022
+date: 2023-01-27T00:00:00.000Z
+categories:
+  - pengumuman
+
+---
+
+[**LKIP Badan Kepegawaian Daerah Provinsi NTT Tahun 2022**](https://bkd.nttprov.go.id/web/wp-content/uploads/2024/06/3.4-LKIP-BKD-NTT-2022.pdf)

@@ -4,7 +4,7 @@ title: ASN Pemerintah Daerah Provinsi NTT Tingkatkan Kompetensi Teknologi
 date: 2024-02-27T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-2024-article-02-3.jpg
+coverImage: ./images/bkdntt-2024-article-02-3.jpg
 
 ---
 

@@ -3,7 +3,7 @@ title: SK Gubernur Tentang Hasil Seleksi Administrasi Seleksi PPPK 2023
 date: 2023-10-16T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_8759.jpeg
+coverImage: ./images/IMG_8759.jpeg
 
 ---
 

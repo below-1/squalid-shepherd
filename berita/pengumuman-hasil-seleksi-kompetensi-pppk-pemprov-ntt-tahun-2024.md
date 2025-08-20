@@ -3,7 +3,7 @@ title: Pengumuman Hasil Seleksi Kompetensi PPPK Pemprov. NTT Tahun 2024
 date: 2025-01-22T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_5238.jpeg
+coverImage: ./images/IMG_5238.jpeg
 
 ---
 

@@ -4,7 +4,7 @@ title: Pengumuman Jadwal, Lokasi, & Ketentuan Pelaksanaan Seleksi Kompetensi
 date: 2024-07-13T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_2631.jpeg
+coverImage: ./images/IMG_2631.jpeg
 
 ---
 

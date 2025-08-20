@@ -3,7 +3,7 @@ title: Renstra Badan Kepegawaian Daerah Provinsi NTT Tahun 2018-2023
 date: 2021-02-22T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/2.1-renstra-bkdntt-2018-2023.jpg
+coverImage: ./images/2.1-renstra-bkdntt-2018-2023.jpg
 
 ---
 

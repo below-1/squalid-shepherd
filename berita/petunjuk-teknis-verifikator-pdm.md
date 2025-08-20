@@ -3,7 +3,7 @@ title: Buku Petunjuk Verifikator PDM V.1.0
 date: 2023-11-08T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/juknis-verifikasi-pdm.png
+coverImage: ./images/juknis-verifikasi-pdm.png
 
 ---
 

@@ -4,7 +4,7 @@ title: "Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur Menggelar Bimtek
 date: 2023-11-10T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkd-ntt-pelatihan-kantor-sendiri.webp
+coverImage: ./images/bkd-ntt-pelatihan-kantor-sendiri.webp
 
 ---
 

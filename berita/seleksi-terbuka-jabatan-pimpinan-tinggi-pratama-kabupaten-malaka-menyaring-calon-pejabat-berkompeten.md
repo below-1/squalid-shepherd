@@ -4,7 +4,7 @@ title: "Seleksi Terbuka Jabatan Pimpinan Tinggi Pratama: Kabupaten Malaka
 date: 2023-11-20T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/jptp-malaka-2023-e1700453182190.jpg
+coverImage: ./images/jptp-malaka-2023-e1700453182190.jpg
 
 ---
 

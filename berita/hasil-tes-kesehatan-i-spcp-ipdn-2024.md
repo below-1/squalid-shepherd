@@ -3,7 +3,7 @@ title: Hasil Tes Kesehatan I SPCP IPDN 2024
 date: 2024-08-13T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_3374.jpeg
+coverImage: ./images/IMG_3374.jpeg
 
 ---
 

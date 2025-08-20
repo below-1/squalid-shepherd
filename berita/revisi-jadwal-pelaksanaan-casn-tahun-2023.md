@@ -3,7 +3,7 @@ title: Revisi Jadwal Pelaksanaan CASN Tahun 2023
 date: 2023-09-18T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/sscasn-img.webp
+coverImage: ./images/sscasn-img.webp
 
 ---
 

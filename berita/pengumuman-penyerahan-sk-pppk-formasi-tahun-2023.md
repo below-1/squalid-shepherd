@@ -3,7 +3,7 @@ title: Pengumuman Penyerahan SK PPPK Formasi Tahun 2023
 date: 2024-07-01T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/bkdntt-pengumuman-penyerahanskPPPK2023.jpg
+coverImage: ./images/bkdntt-pengumuman-penyerahanskPPPK2023.jpg
 
 ---
 

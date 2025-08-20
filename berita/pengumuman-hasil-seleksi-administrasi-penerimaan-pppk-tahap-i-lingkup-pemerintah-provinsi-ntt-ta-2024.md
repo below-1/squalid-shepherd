@@ -4,7 +4,7 @@ title: Pengumuman Hasil Seleksi Administrasi Penerimaan PPPK Tahap I Lingkup
 date: 2024-11-01T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/banner-blue-clear-e1730467670637.png
+coverImage: ./images/banner-blue-clear-e1730467670637.png
 
 ---
 

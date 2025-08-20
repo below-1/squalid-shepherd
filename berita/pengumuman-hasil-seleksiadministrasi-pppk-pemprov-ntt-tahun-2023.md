@@ -4,7 +4,7 @@ title: Pengumuman Hasil Seleksi Administrasi Penerimaan PPPK Pemerintah Provinsi
 date: 2023-10-16T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/IMG_8760.jpeg
+coverImage: ./images/IMG_8760.jpeg
 
 ---
 

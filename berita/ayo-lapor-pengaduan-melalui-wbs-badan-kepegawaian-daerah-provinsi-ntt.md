@@ -3,7 +3,7 @@ title: Ayo Lapor Pengaduan Melalui WBS Badan Kepegawaian Daerah Provinsi NTT!
 date: 2023-12-01T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/wbs-bkd-ntt2.jpg
+coverImage: ./images/wbs-bkd-ntt2.jpg
 
 ---
 

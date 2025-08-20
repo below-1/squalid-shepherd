@@ -3,7 +3,7 @@ title: Pengumuman Hasil Seleksi PPPK Tahap II Lingkup Pemerintah Provinsi NTT
 date: 2025-07-02T00:00:00.000Z
 categories:
   - download
-coverImage: /images/migrated/image-1.png
+coverImage: ./images/image-1.png
 
 ---
 

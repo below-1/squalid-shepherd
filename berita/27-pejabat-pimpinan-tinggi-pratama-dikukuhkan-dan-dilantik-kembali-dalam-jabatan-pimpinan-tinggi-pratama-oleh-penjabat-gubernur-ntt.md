@@ -4,7 +4,7 @@ title: 27 Pejabat Pimpinan Tinggi Pratama dikukuhkan dan dilantik kembali dalam
 date: 2024-03-28T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/WhatsApp-Image-2024-03-28-at-11.35.51-AM-e1716192699660.jpeg
+coverImage: ./images/WhatsApp-Image-2024-03-28-at-11.35.51-AM-e1716192699660.jpeg
 
 ---
 

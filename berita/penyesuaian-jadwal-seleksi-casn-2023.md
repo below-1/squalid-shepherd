@@ -8,7 +8,7 @@ tags:
   - pppk
   - pppk2023
   - pppkguru
-coverImage: /images/migrated/Penyesuaian-Jadwal-Seleksi-CASN-TA-2023.png
+coverImage: ./images/Penyesuaian-Jadwal-Seleksi-CASN-TA-2023.png
 
 ---
 

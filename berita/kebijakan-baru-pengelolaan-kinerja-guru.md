@@ -3,7 +3,7 @@ title: Kebijakan Baru Pengelolaan Kinerja Guru
 date: 2024-01-05T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-2024-article-02-1.jpg
+coverImage: ./images/bkdntt-2024-article-02-1.jpg
 
 ---
 

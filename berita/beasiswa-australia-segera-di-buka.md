@@ -3,7 +3,7 @@ title: Beasiswa Australia Segera Dibuka
 date: 2023-12-05T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/Beasiswa-Australia-dibuka.jpg
+coverImage: ./images/Beasiswa-Australia-dibuka.jpg
 
 ---
 

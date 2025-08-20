@@ -4,7 +4,7 @@ title: "Lakukan evaluasi berkelanjutan: pesan dari peluncuran dan Bedah buku
 date: 2024-07-30T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bedahbuku-2.jpeg
+coverImage: ./images/bedahbuku-2.jpeg
 
 ---
 

@@ -4,7 +4,7 @@ title: 'Komit Lestarikan Budaya Lokal : BKDNTT Persembahkan Tarian "Soka Raja
 date: 2023-12-20T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/sokarajalima-bkdntt.png
+coverImage: ./images/sokarajalima-bkdntt.png
 
 ---
 

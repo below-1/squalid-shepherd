@@ -3,7 +3,7 @@ title: 41 Peserta antusias mengikuti Selter JPTP di TTS
 date: 2023-12-04T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/bkdntt-selterkabtts-2023.jpg
+coverImage: ./images/bkdntt-selterkabtts-2023.jpg
 
 ---
 

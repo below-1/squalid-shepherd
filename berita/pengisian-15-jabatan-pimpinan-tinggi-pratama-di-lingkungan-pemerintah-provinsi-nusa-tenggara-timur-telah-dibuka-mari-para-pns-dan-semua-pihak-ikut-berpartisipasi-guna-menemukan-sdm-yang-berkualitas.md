@@ -6,7 +6,7 @@ title: Pengisian 15 Jabatan Pimpinan Tinggi Pratama di Lingkungan Pemerintah
 date: 2024-05-15T00:00:00.000Z
 categories:
   - berita
-coverImage: /images/migrated/01-05-bkdntt-15jptpntt-dibuka.jpg
+coverImage: ./images/01-05-bkdntt-15jptpntt-dibuka.jpg
 
 ---
 
