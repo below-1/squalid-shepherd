@@ -1,0 +1,10 @@
+---
+title: Panduan Digital (E-book) Peminjaman Arsip
+date: 2023-12-05T00:00:00.000Z
+categories:
+  - download
+coverImage: /images/migrated/Panduan-Digital-Peminjaman-Arsip-e1701735905653.png
+
+---
+
+Lihat info lengkap : **[Panduan Digital (E-book) Peminjaman Arsip](https://bkd.nttprov.go.id/web/wp-content/uploads/2023/12/Panduan-Digital-E-book-Peminjaman-Arsip.pdf)**

@@ -1,0 +1,23 @@
+---
+title: Badan Pemeriksa Keuangan Republik Indonesia Lakukan Uji Petik Di Badan
+  Kepegawaian Daerah Provinsi NTT
+date: 2023-12-11T00:00:00.000Z
+categories:
+  - berita
+coverImage: /images/migrated/ujipetik-IDIS.jpg
+
+---
+
+**bkd.nttprov.go.id** – Sehubungan dengan pelaksanaan Pemeriksaan Kinerja atas Efektivitas Pengawasan dan Pengendalian Penegakan Disiplin ASN dalam mendukung Prioritas Nasional 4 – Revolusi Mental dan Pembangunan Kebudayaan pada beberapa Kantor Regional Badan Kepegawaian Negara termasuk Kantor Regional X Badan Kepegawaian Negara Denpasar Tahun 2021 sampai dengan Triwulan III Tahun 2023, sehingga Badan Pemeriksa Keuangan Republik Indonesia lakukan Uji Petik di Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur yang merupakan salah satu instansi di Wilayah Kerja Kantor Regional X Badan Kepegawaian Negara Denpasar.
+
+Bertempat di Ruang Rapat Lingae, Selasa 28 November 2023 kegiatan uji petik tersebut di pimpin langsung oleh Kepala Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur, Ibu Henderina S. Laiskodat, SP, M.Si, dan di hadiri oleh PIC Team dari Badan Pemeriksa Keuangan Republik Indonesia, Bapak Adila Amri Pratama dan para pejabat Administrator serta ASN di Badan Kepegawaian Daerah Provinsi NTT dengan beberapa substansi target uji petik yakni Penegakan Disiplin ASN, Penghargaan kepada ASN, dan Penggunaan Aplikasi IDIS (Integrated Discipline).
+
+Terkait dengan penegakan disiplin ASN, ada beberapa point penting yang ditanyakan oleh pihak Badan Pemeriksa Keuangan Provinsi Nusa Tenggara Timur salah satunya adalah apakah ada peraturan/regulasi internal instansi yang menjadi dasar pelaksanaan penegakan disiplin ASN, dan Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur mengkonfirmasi bahwa saat ini sudah ada regulasi yang telah ditetapkan oleh Pemerintah Provinsi Nusa Tenggara Timur untuk penegakan disiplin ASN yaitu Peraturan Gubernur NTT Nomor 61 Tahun 2019 tentang Kode Etik PNS di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur, Peraturan Gubernur Nomor 60 Tahun 2020 tentang Pedoman Umum Penanganan Benturan Kepentingan Bagi ASN Lingkup Pemerintah Provinsi NTT, dan Peraturan Gubernur NTT Nomor 16 Tahun 2023 tentang Tata Cara Penjatuhan Hukuman Disiplin PNS di Lingkungan Pemerintah Provinsi NTT, dan sementara berproses draft Peraturan Gubernur NTT tentang Disiplin Pegawai Pemerintah dengan Perjanjian Kerja di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur.
+
+Sedangkan terkait Penghargaan kepada ASN, telah dilakukan secara rutin setiap tahunnya berupa pemberian penghargaan Tanda Kehormatan Setya Lencana Karya Satya kepada ASN di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur berdasarkan Undang-Undang Nomor 20 Tahun 2009 tentang Gelar Tanda Jasa dan Tanda Kehormatan. Selain itu Badan Kepegawaian Daerah Provinsi NTT juga selalu rutin memberikan reward kepada para ASN di Badan Kepegawaian Daerah Provinsi NTT berupa piagam penghargaan kepada pegawai teladan setiap bulan dengan kategori penilaian yaitu, disiplin, kinerja dan loyalitas dalam bekerja.
+
+Dan yang terakhir, terkait tentang evaluasi penggunaan Aplikasi IDIS (Integrated Discipline) yang merupakan sistem informasi pelaporan proses hukuman disiplin yang terintegrasi dengan sistem SAPK BKN. Sistem informasi ini bertujuan untuk memberikan standar dan kemudahan dalam melakukan proses pelaporan hukuman disiplin, mulai dari identifikasi sampai pembuatan surat keputusan hukuman disiplin sesuai dengan ketentuan perundang-undangan yang berlaku.  Terkait penggunaan aplikasi IDIS ini, Badan Kepegawaian Daerah Provinsi NTT sudah menggunakannya, tetapi memang belum begitu dikenal dan diketahui oleh seluruh Perangkat Daerah ataupun ASN di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur, sehingga Badan Kepegawaian Daerah Provinsi NTT mempunyai harapan agar Badan Kepegawaian Negara dapat memberikan sosialisasi kepada seluruh ASN agar mengetahui dan menggunakan aplikasi ini sesuai ketentuan yang berlaku dan sesuai dengan tahapan-tahapannya yaitu mulai dari tahap register, identifikasi pelanggaran.
+
+Kepala Badan Kepegawaian Daerah Provinsi NTT pun mengucapkan terima kasih karena telah dikunjungi dan menjadi salah satu tempat pelaksanaan Uji Petik oleh Badan Pemeriksa Keuangan Republik Indonesia terhadap kinerja atas Efektivitas Pengawasan dan Pengendalian Penegakan Disiplin ASN oleh Kantor Regional X Badan Kepegawaian Negara Denpasar, dan kegiatan diakhiri dengan penyerahan dokumen bukti dukung oleh Kepala Badan Kepegawaian Daerah Provinsi NTT kepada Tim Badan Pemeriksa Keuangan Republik Indonesia.
+
+Penulis : Marisa Indrawati Ngambut, SH / Analis Pelanggaran Disiplin
