@@ -30,4 +30,18 @@ const berita = defineCollection({
 		}),
 });
 
-export const collections = { news, berita };
+const pengumuman = defineCollection({
+	// Load Markdown and MDX files in the `src/content/news/` directory.
+	loader: glob({ base: './pengumuman', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			categories: z.array(z.string()),
+			// Transform string to Date object
+			date: z.coerce.date(),
+			coverImage: image().optional(),
+		}),
+});
+
+export const collections = { news, berita, pengumuman };
