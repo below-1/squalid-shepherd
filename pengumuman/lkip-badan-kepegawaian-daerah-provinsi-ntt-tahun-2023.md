@@ -3,6 +3,7 @@ title: LKIP Badan Kepegawaian Daerah Provinsi NTT Tahun 2023
 date: 2024-01-23T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/LKIP-bkdntt-2023.jpg
 
 ---
 

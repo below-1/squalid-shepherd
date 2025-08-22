@@ -3,6 +3,7 @@ title: Pengumuman Tambahan Seleksi PPPK Pemprov NTT Tahun 2023
 date: 2023-09-22T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/sscasn-img.webp
 
 ---
 

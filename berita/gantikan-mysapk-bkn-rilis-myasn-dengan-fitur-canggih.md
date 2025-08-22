@@ -3,7 +3,7 @@ title: Gantikan MySAPK, BKN Rilis MyASN dengan Fitur Canggih
 date: 2023-10-27T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/myasn.jpg
+coverImage: ../images/myasn.jpg
 
 ---
 

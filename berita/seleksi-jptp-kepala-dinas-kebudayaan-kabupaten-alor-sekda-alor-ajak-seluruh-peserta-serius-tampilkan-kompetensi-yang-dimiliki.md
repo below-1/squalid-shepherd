@@ -13,7 +13,7 @@ tags:
   - pemerintahprovinsintt
   - seleksiterbuka
   - selter
-coverImage: ./images/10-05-bkdntt-jptpalor.jpg
+coverImage: ../images/10-05-bkdntt-jptpalor.jpg
 
 ---
 

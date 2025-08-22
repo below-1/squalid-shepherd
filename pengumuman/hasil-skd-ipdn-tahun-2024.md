@@ -3,6 +3,7 @@ title: Hasil SKD IPDN TAHUN 2024
 date: 2024-08-02T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/IMG_3220.jpeg
 
 ---
 

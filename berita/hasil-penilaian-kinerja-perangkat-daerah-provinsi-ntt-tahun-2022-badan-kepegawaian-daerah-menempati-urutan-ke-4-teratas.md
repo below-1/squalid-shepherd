@@ -4,7 +4,7 @@ title: Hasil Penilaian Kinerja Perangkat Daerah Provinsi NTT Tahun 2022, Badan
 date: 2024-01-10T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-01-1.jpg
+coverImage: ../images/bkdntt-2024-article-01-1.jpg
 
 ---
 

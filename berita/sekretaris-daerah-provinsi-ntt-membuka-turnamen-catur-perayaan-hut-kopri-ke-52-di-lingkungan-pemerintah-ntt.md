@@ -4,7 +4,7 @@ title: Sekretaris Daerah Provinsi NTT Membuka Turnamen Catur Perayaan HUT KOPRI
 date: 2023-11-08T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkd-ntt-catur-pembukaan-sekda-nttt.webp
+coverImage: ../images/bkd-ntt-catur-pembukaan-sekda-nttt.webp
 
 ---
 

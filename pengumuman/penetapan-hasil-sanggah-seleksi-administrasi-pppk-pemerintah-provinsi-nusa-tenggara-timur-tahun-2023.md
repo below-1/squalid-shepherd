@@ -9,6 +9,7 @@ tags:
   - pppk2023
   - pppkguru
   - provinsintt
+coverImage: ../images/pegumumansanggah-administrasi-bkdntt.jpg
 
 ---
 

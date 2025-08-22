@@ -3,6 +3,7 @@ title: Pemberitahuan Maintenance website meterai-elektronik.com
 date: 2023-09-27T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/Pemberitahuan-Maintenance-website-meterai-elektronik.com_.jpg
 
 ---
 

@@ -4,7 +4,7 @@ title: "Pentingnya Memahami Indeks Profesionalitas ASN: Kunci Keberhasilan dalam
 date: 2023-10-20T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/ipjasn.jpg
+coverImage: ../images/ipjasn.jpg
 
 ---
 

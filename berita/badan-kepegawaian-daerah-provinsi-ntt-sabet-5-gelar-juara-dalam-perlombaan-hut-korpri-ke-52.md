@@ -10,7 +10,7 @@ tags:
   - hutkorprike52
   - korpri
   - pemerintahprovinsintt
-coverImage: ./images/bkd-raih5juara-KTI-HUTKORPRI52.jpg
+coverImage: ../images/bkd-raih5juara-KTI-HUTKORPRI52.jpg
 
 ---
 

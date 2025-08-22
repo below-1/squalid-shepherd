@@ -2,13 +2,15 @@
 import { Icon } from "astro-icon/components";
 import { format } from 'date-fns';
 import { id } from 'date-fns/locale';
+import placeholderImage from '../images/news.png'
+import { Image } from "astro:assets";
 
 type Props = {
   id: string;
   date: Date;
   title: string;
   creator: string;
-  image: string;
+  image?: ImageMetadata;
 }
 
 const props = Astro.props;
@@ -17,10 +19,12 @@ const dayOfMonth = format(props.date, "dd", { locale: id })
 const month = format(props.date, "MMMM", { locale: id })
 const year = format(props.date, "yyyy", { locale: id })
 const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
+const image = props.image ?? placeholderImage 
 ---
 
-<a href={`/news/${props.id}`} class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white">
-  <img src={props.image} class="size-24 shrink-0 flex flex-col" />
+<a href={`/berita/${props.id}`} class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white">
+  <Image src={image} alt="sas" class="size-24 shrink-0 flex flex-col" />
+  
 
   <div class="flex flex-col justify-center gap-2">
     <div class="text-black font-black text-lg underline group-hover:text-primary-800 group-focus:text-primary-700 group-active:text-primary-500">

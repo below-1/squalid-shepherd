@@ -4,7 +4,7 @@ title: "Luncurkan Aplikasi CAT Assessment Center, Kepala BKD Provinsi NTT
 date: 2024-03-04T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-03-1.jpg
+coverImage: ../images/bkdntt-2024-article-03-1.jpg
 
 ---
 

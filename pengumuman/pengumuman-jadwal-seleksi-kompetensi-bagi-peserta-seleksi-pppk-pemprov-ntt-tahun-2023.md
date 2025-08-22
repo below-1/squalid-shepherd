@@ -11,6 +11,7 @@ tags:
   - pppkguru
   - provinsintt
   - sscasn
+coverImage: ../images/seleksi-kompetensi-pppk2023.jpg
 
 ---
 

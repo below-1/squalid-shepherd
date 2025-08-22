@@ -4,6 +4,7 @@ title: Pengumuman Jadwal Seleksi Kompetensi PPPK Tahap II Pemerintah Provinsi
 date: 2025-04-25T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/bkdntt-jadwalpppk-thpII.png
 
 ---
 

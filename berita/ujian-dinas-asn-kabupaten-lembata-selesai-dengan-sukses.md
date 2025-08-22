@@ -3,7 +3,7 @@ title: Ujian Dinas ASN Kabupaten Lembata Selesai dengan Sukses
 date: 2023-11-10T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-udlembata-2023.jpg
+coverImage: ../images/bkdntt-udlembata-2023.jpg
 
 ---
 

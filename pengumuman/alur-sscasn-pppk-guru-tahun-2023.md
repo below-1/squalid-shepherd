@@ -3,6 +3,7 @@ title: Alur SSCASN PPPK Guru Tahun 2023
 date: 2023-09-19T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/sscasn-img.webp
 
 ---
 

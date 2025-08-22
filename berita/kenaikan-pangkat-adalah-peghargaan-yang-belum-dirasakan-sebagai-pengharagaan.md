@@ -3,7 +3,7 @@ title: Kenaikan Pangkat Adalah Peghargaan Yang Belum Dirasakan Sebagai Pengharag
 date: 2023-10-20T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-kenaikanpangkat.jpg
+coverImage: ../images/bkdntt-kenaikanpangkat.jpg
 
 ---
 

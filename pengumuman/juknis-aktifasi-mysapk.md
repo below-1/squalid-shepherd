@@ -3,6 +3,7 @@ title: Petunjuk Teknis Mengaktifkan MySAPK
 date: 2023-11-08T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/mysapk-aktivasi-1.png
 
 ---
 

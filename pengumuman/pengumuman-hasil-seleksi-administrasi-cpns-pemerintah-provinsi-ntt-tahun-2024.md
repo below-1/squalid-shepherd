@@ -11,6 +11,7 @@ tags:
   - provinsintt
   - sscasn
   - tahunanggaran2024
+coverImage: ../images/IMG_3853.jpeg
 
 ---
 

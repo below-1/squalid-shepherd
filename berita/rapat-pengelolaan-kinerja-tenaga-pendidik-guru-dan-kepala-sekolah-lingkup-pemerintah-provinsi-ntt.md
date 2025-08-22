@@ -4,7 +4,7 @@ title: Rapat Pengelolaan Kinerja Tenaga Pendidik (Guru dan Kepala Sekolah)
 date: 2024-01-23T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-01-4.jpg
+coverImage: ../images/bkdntt-2024-article-01-4.jpg
 
 ---
 

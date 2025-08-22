@@ -3,7 +3,7 @@ title: Tes Kesehatan Tahap II Seleksi Penerimaan Calon Praja IPDN Tahun 2023
 date: 2023-07-29T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-TesKesehatan-TahapII-spcpIPDN2023.jpg
+coverImage: ../images/bkdntt-TesKesehatan-TahapII-spcpIPDN2023.jpg
 
 ---
 

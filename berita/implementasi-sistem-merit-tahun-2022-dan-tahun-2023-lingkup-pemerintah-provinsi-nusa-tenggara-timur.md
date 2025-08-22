@@ -4,7 +4,7 @@ title: Implementasi Sistem Merit Tahun 2022 Dan Tahun 2023  Lingkup Pemerintah
 date: 2024-01-11T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-01-2.jpg
+coverImage: ../images/bkdntt-2024-article-01-2.jpg
 
 ---
 

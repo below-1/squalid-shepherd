@@ -16,6 +16,7 @@ tags:
   - seleksicpns
   - sscasn
   - tahunanggaran2024
+coverImage: ../images/IMG_3515.jpeg
 
 ---
 

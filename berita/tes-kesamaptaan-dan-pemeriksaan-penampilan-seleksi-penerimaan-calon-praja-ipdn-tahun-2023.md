@@ -4,7 +4,7 @@ title: Tes Kesamaptaan Dan Pemeriksaan Penampilan  Seleksi Penerimaan Calon
 date: 2023-07-31T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-kesamaptaan-spcpIPDN2023.jpg
+coverImage: ../images/bkdntt-kesamaptaan-spcpIPDN2023.jpg
 
 ---
 

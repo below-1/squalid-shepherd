@@ -9,6 +9,7 @@ tags:
   - pppk2023
   - pppkguru
   - provinsintt
+coverImage: ../images/bkdntt-pengumuman-selkom-pppk-2023.png
 
 ---
 

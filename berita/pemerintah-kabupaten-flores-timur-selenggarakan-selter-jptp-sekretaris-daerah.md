@@ -3,7 +3,7 @@ title: Pemerintah Kabupaten Flores Timur selenggarakan Selter JPTP Sekretaris Da
 date: 2023-09-30T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-selterkabflotim-2023.jpg
+coverImage: ../images/bkdntt-selterkabflotim-2023.jpg
 
 ---
 

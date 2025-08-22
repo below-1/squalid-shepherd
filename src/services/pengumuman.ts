@@ -1,15 +1,21 @@
 import { faker } from '@faker-js/faker'
 import { range } from '../utils/range'
+import { getCollection } from 'astro:content';
 
-export async function getLatestPengumumanItems() {
-  const n = 6
-  const total = faker.number.int({ min: 32, max: 70 })
-  const items = range(n).map(i => {
+export async function getLatestPengumumanItems(n: number = 6) {
+  const _items = await getCollection("pengumuman")
+  _items.sort((a, b) => {
+    return a.data.date.getTime() - b.data.date.getTime()
+  })
+  // console.log(_items)
+
+  const total = _items.length
+  const items = _items.slice(0, n).map(item => {
     return {
-      id: i + 1,
+      id: item.id,
       creator: 'admin bkd',
-      date: faker.date.past(),
-      title: faker.lorem.sentence(12),
+      date: item.data.date,
+      title: item.data.title,
     }
   })
   return {

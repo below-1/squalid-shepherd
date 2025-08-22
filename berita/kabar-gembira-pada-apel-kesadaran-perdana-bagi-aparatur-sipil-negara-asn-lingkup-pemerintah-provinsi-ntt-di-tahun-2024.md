@@ -4,7 +4,7 @@ title: Kabar Gembira pada Apel Kesadaran Perdana Bagi  Aparatur Sipil Negara
 date: 2024-01-18T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-01-3.jpg
+coverImage: ../images/bkdntt-2024-article-01-3.jpg
 
 ---
 

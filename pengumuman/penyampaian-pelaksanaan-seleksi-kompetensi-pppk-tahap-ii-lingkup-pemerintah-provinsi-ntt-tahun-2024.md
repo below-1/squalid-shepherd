@@ -4,6 +4,7 @@ title: Penyampaian Pelaksanaan Seleksi Kompetensi PPPK Tahap II Lingkup
 date: 2025-04-27T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/pengumuman-pppk-II.jpg
 
 ---
 

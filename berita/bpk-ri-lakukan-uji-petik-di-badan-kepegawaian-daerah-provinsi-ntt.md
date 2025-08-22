@@ -4,7 +4,7 @@ title: Badan Pemeriksa Keuangan Republik Indonesia Lakukan Uji Petik Di Badan
 date: 2023-12-11T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/ujipetik-IDIS.jpg
+coverImage: ../images/ujipetik-IDIS.jpg
 
 ---
 

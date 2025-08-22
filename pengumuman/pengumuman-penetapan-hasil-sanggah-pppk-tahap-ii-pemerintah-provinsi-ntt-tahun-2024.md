@@ -4,6 +4,7 @@ title: Pengumuman Penetapan Hasil Sanggah PPPK Tahap II Pemerintah Provinsi NTT
 date: 2025-03-04T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/IMG_5687.jpeg
 
 ---
 

@@ -3,7 +3,7 @@ title: Pelaksanaan Seleksi Calon Praja IPDN Tahun TAHUN 2023 (Hari Ke-2)
 date: 2023-06-14T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/14062023085416BKD-NTT-IPDN-SKD-2023.jpg
+coverImage: ../images/14062023085416BKD-NTT-IPDN-SKD-2023.jpg
 
 ---
 

@@ -3,6 +3,7 @@ title: Penyesuaian Rentang Waktu Pendaftaran Seleksi PPPK Guru Tahun Anggaran 20
 date: 2023-09-30T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/IMG_8244.jpeg
 
 ---
 

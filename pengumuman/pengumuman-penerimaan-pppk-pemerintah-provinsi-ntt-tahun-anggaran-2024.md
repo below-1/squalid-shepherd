@@ -3,6 +3,7 @@ title: Pengumuman Penerimaan PPPK Pemerintah Provinsi NTT Tahun Anggaran 2024
 date: 2024-10-01T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/bkdntt-Pengumuman-PPPK-NTT2024-1.png
 
 ---
 

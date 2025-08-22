@@ -4,6 +4,7 @@ title: Keputusan Rektor IPDN tentang Peserta Lulus Tes Psikologi, Integritas,
 date: 2024-08-22T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/IMG_3522.jpeg
 
 ---
 

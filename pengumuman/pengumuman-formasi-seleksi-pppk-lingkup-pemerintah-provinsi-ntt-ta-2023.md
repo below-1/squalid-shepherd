@@ -3,6 +3,7 @@ title: Pengumuman Formasi Seleksi PPPK Lingkup Pemerintah Provinsi NTT TA 2023
 date: 2023-09-19T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/sscasn-img.webp
 
 ---
 

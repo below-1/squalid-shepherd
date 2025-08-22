@@ -3,7 +3,7 @@ title: Tidak Akan Ada Intervensi dalam Seleksi JPT Pratama
 date: 2023-10-24T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/foto-bkdntt-selterjptpmatim2023.png
+coverImage: ../images/foto-bkdntt-selterjptpmatim2023.png
 
 ---
 

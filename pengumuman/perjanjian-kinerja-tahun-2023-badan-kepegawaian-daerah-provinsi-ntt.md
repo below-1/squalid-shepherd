@@ -3,6 +3,7 @@ title: Perjanjian Kinerja Tahun 2023 Badan Kepegawaian Daerah Provinsi NTT
 date: 2023-03-01T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/2.-pk-bkdntt-2023.jpg
 
 ---
 

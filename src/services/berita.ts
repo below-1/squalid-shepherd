@@ -1,15 +1,21 @@
 import { faker } from '@faker-js/faker'
 import { range } from '../utils/range'
+import { getCollection } from 'astro:content';
 
 export async function getLatestBeritaItems(n: number = 10) {
-  const total = faker.number.int({ min: 32, max: 70 })
-  const items = range(n).map(i => {
+  const _items = await getCollection("berita")
+  _items.sort((a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime()
+  })
+
+  const total = _items.length
+  const items = _items.slice(0, n).map(item => {
     return {
-      id: i + 77,
+      id: item.id,
       creator: 'admin bkd',
-      date: faker.date.past(),
-      title: faker.lorem.sentence(12),
-      image: `/images/carousel-${(i % 4) + 1}.jpg`
+      date: item.data.date,
+      title: item.data.title,
+      image: item.data.coverImage
     }
   })
   return {

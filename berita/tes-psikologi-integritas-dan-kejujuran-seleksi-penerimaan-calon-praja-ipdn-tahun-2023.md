@@ -4,7 +4,7 @@ title: Tes Psikologi, Integritas dan Kejujuran Seleksi Penerimaan Calon Praja
 date: 2023-07-18T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-Tespsiko-TahapI-spcpIPDN2023.jpg
+coverImage: ../images/bkdntt-Tespsiko-TahapI-spcpIPDN2023.jpg
 
 ---
 

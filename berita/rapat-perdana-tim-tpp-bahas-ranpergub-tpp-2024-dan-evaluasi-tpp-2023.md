@@ -3,7 +3,7 @@ title: Rapat Perdana TIM TPP bahas Ranpergub TPP 2024 dan Evaluasi TPP 2023
 date: 2024-02-15T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-2024-article-02-2.jpg
+coverImage: ../images/bkdntt-2024-article-02-2.jpg
 
 ---
 

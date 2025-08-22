@@ -3,7 +3,7 @@ title: Registrasi Calon Praja IPDN Angkatan XXXIV Provinsi NTT Tahun 2023
 date: 2023-08-09T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-registrasi-spcpIPDN2023.jpg
+coverImage: ../images/bkdntt-registrasi-spcpIPDN2023.jpg
 
 ---
 

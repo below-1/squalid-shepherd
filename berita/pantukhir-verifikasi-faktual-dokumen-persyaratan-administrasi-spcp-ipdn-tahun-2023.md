@@ -4,7 +4,7 @@ title: PANTUKHIR (Verifikasi Faktual Dokumen Persyaratan Administrasi) SPCP IPDN
 date: 2023-07-29T00:00:00.000Z
 categories:
   - berita
-coverImage: ./images/bkdntt-pantukhir-spcpIPDN2023.jpg
+coverImage: ../images/bkdntt-pantukhir-spcpIPDN2023.jpg
 
 ---
 

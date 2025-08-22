@@ -3,6 +3,7 @@ title: Pengumuman Hasil Akhir Seleksi Terbuka JPTP Pemerintah Provinsi NTT 2024
 date: 2024-07-16T00:00:00.000Z
 categories:
   - pengumuman
+coverImage: ../images/bkdntt-pengumuman-hasilakhir-selterJPTP-pemprovNTT-2024.jpg
 
 ---
 
