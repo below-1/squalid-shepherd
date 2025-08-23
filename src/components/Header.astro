@@ -2,6 +2,9 @@
 import NavMenuItem from "./NavMenuItem.astro";
 import SecondaryNavItem from "./SecondaryNavItem.astro";
 import SecondarySocItem from "./SecondarySocItem.astro";
+import logo from '../images/logo.png'
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 const menus = [
 	{ text: "Beranda", url: "/" },
@@ -12,8 +15,8 @@ const menus = [
 ]
 ---
 
-<div class="sticky top-0 z-80">
-	<header class="">
+<div class="Header fixed md:sticky top-0 z-80 transition-transform duration-300 ease-in-out">
+	<header class="hidden md:block">
 		<div class="h-1 bg-accent-300 w-full"></div>
 		<div class="bg-primary-700 w-full">
 			<div class="h-8 container mx-auto flex gap-6 text-white">
@@ -29,28 +32,62 @@ const menus = [
 		<div class="container mx-auto">
 			<div class="h-20 flex">
 	
-				<a href="/" class="flex items-center gap-2">
-					<img
+				<a href="/" class="flex items-center gap-2 pl-4 md:pl-0">
+					<Image
 						class="size-12"
-						src="https://bkd.nttprov.go.id/web/wp-content/uploads/2023/09/cropped-Logo-PemprovNTT.png"
+						src={logo}
 						alt="BKD Provinsi NTT"
 						decoding="async"
 					/>
 					<div class="flex flex-col">
-						<div class="text-primary-800 uppercase tracking-wider text-lg leading-none font-black">BKD provinsi NTT</div>
-						<div class="text-sm leading-none">Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas</div>
+						<div class="text-primary-800 uppercase tracking-wider text-base md:text-lg leading-none font-black">BKD provinsi NTT</div>
+						<div class="text-xs md:text-sm leading-none">Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas</div>
 					</div>
 				</a>
 	
 				<div class="hidden md:block md:grow"></div>
 	
-				<div class="flex items-center">
+				<div class="hidden md:flex items-center">
 					{menus.map((menu, index) => (
 						<NavMenuItem {...menu} class={index == menus.length - 1 ? "pr-0" : ""} />
 					))}
 				</div>
+
+				<button class="flex md:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4">
+					<Icon name="dashboard" class="size-8" />
+				</button>
 	
 			</div>
 		</div>
 	</nav>
+
+	
 </div>
+
+<style>
+	.Header.behind {
+		transform: translateY(-100%); /* Move header off-screen */
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const header = document.querySelector('.Header');
+		if (!header) return;
+		let lastScrollTop = 0;
+		const headerHeight = header.offsetHeight; // Get header height for accurate hiding
+
+		window.addEventListener('scroll', function() {
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+				// Scrolling down and past header height
+				header.classList.add('behind');
+			} else {
+				// Scrolling up or near the top
+				header.classList.remove('behind');
+			}
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+		});
+	});
+</script>

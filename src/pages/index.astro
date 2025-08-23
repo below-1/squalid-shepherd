@@ -56,12 +56,12 @@ const gallerySnapshoot = await getGallerySnapshoot()
 </style>
 
 <Layout>
-	<div class="container mx-auto py-8 space-y-8">
-		<Carousel items={carouselItems} time={10 * 1000} class="h-[700px]" />
+	<div class="container mx-auto py-8 space-y-8 mt-20 md:mt-0">
+		<Carousel items={carouselItems} time={10 * 1000} class="h-[500px] md:h-[700px]" />
 		<div
-			class="w-full bg-accent-100 flex items-center justify-center flex-col text-primary-800 py-24 border border-neutral-200"
+			class="w-full bg-accent-100 flex items-center justify-center flex-col text-primary-800 py-16 md:py-24 border border-neutral-200"
 		>
-			<p class="cookie-regular text-6xl md:max-w-3/5 font-bold text-center">
+			<p class="cookie-regular text-3xl md:text-6xl md:max-w-3/5 font-bold text-center">
 				Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Berintegritas, Tulus,
 				dan Ikhlas
 			</p>
@@ -104,15 +104,15 @@ const gallerySnapshoot = await getGallerySnapshoot()
 			title="Daftar Layanan"
 			listingRef="/layanan"
 		>
-			<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-2">
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
 				{apps.map(app => (
 					<a 
 						href={app.url}
-						class="group bg-neutral-100 h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
+						class="group bg-neutral-100 h-48 md:h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
 						title={app.label}
 					>
 						<div class="grow grid items-center justify-center">
-							<Icon name={app.icon} class="size-32 group-hover:text-primary-600" />
+							<Icon name={app.icon} class="size-20 md:size-32 group-hover:text-primary-600" />
 						</div>
 						<p class="font-black text-center underline group-hover:text-primary-600">{app.label}</p>
 					</a>
@@ -128,7 +128,7 @@ const gallerySnapshoot = await getGallerySnapshoot()
 			title="Tentang BKD"
 			listingRef="/layanan"
 		>
-			<div class="text-xl leading-8 space-y-6">
+			<div class="text-base md:text-xl leading-6 md:leading-8 space-y-6">
 				<p>
 					Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur lahir sebagai konsekuensi pelaksanaan otonomi daerah dengan ditetapkannya Undang-Undang Nomor 32 tahun 2004 tentang Pemerintahan Daerah, dimana dalam salah satu pasalnya mengisyaratkan adanya kewenangan pelaksanaan manajemen kepegawaian daerah.
 				</p>

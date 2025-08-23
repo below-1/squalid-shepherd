@@ -19,16 +19,16 @@ const props = Astro.props;
   ]}
 >
   <section
-    class:list={["container mx-auto my-16 px-4", props.class ?? ""]}
+    class:list={["container mx-auto my-8 md:my-16 px-4", props.class ?? ""]}
   >
     <div class="flex items-center gap-2 mb-6">
-      <h1 class="text-primary-800 dark:text-white text-3xl font-black">
+      <h1 class="text-primary-800 dark:text-white text-xl md:text-3xl font-black">
         {props.title}
       </h1>
       <div class="grow"></div>
       {props.totalItems && (
         <div
-          class="rounded-xl bg-primary-700 dark:bg-transparent text-white text-lg font-bold flex items-center justify-center px-6 py-2"
+          class="hidden md:flex rounded-xl bg-primary-700 dark:bg-transparent text-white text-lg font-bold items-center justify-center px-6 py-2"
         >
           {props.totalItems}
           {props.title}

@@ -29,7 +29,7 @@ const size = props.size ?? "base";
 
 <a
   href={`/berita/${props.id}`}
-  class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white"
+  class="group flex gap-4 md:gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white"
 >
   <Image src={image} alt="sas" 
     class={twMerge(
@@ -42,23 +42,23 @@ const size = props.size ?? "base";
     <div
       class={twMerge(
         "text-black font-black underline group-hover:text-primary-800 group-focus:text-primary-700 group-active:text-primary-500",
-        size == 'base' ? "text-lg" : "text-2xl"
+        size == 'base' ? "text-sm md:text-lg" : "text-lg md:text-2xl"
       )}
     >
       {props.title}
     </div>
-    <div class="flex gap-3 items-center">
+    <div class="flex gap-3 items-center text-xs md:text-sm">
       <div class="flex items-center gap-1">
         <Icon name="calendar" />
-        <div class="text-sm">{fullDate}</div>
+        <div class="">{fullDate}</div>
       </div>
       <div class="flex items-center gap-1">
         <Icon name="user" />
-        <div class="text-sm">{props.creator}</div>
+        <div class="">{props.creator}</div>
       </div>
       <div class="flex items-center gap-1">
         <Icon name="eye" />
-        <div class="text-sm">400</div>
+        <div class="">400</div>
       </div>
     </div>
   </div>
