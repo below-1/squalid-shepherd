@@ -1,33 +1,50 @@
 ---
 import { Icon } from "astro-icon/components";
-import { format } from 'date-fns';
-import { id } from 'date-fns/locale';
-import placeholderImage from '../images/news.png'
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
+import placeholderImage from "../images/news.png";
 import { Image } from "astro:assets";
+import { tv } from "tailwind-variants";
+import { twMerge } from 'tailwind-merge'
+
 
 type Props = {
   id: string;
   date: Date;
   title: string;
   creator: string;
+  size?: "base" | "lg";
   image?: ImageMetadata;
-}
+};
 
 const props = Astro.props;
 
-const dayOfMonth = format(props.date, "dd", { locale: id })
-const month = format(props.date, "MMMM", { locale: id })
-const year = format(props.date, "yyyy", { locale: id })
-const fullDate = format(props.date, "dd MMMM yyyy", { locale: id })
-const image = props.image ?? placeholderImage 
+const dayOfMonth = format(props.date, "dd", { locale: id });
+const month = format(props.date, "MMMM", { locale: id });
+const year = format(props.date, "yyyy", { locale: id });
+const fullDate = format(props.date, "dd MMMM yyyy", { locale: id });
+const image = props.image ?? placeholderImage;
+const size = props.size ?? "base";
 ---
 
-<a href={`/berita/${props.id}`} class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white">
-  <Image src={image} alt="sas" class="size-24 shrink-0 flex flex-col" />
-  
+<a
+  href={`/berita/${props.id}`}
+  class="group flex gap-8 items-center cursor-pointer dark:shadow-neutral-400 transition-all bg-white"
+>
+  <Image src={image} alt="sas" 
+    class={twMerge(
+      "shrink-0 flex flex-col",
+      size == 'base' ? "size-24" : "w-64 h-32"
+    )}
+  />
 
   <div class="flex flex-col justify-center gap-2">
-    <div class="text-black font-black text-lg underline group-hover:text-primary-800 group-focus:text-primary-700 group-active:text-primary-500">
+    <div
+      class={twMerge(
+        "text-black font-black underline group-hover:text-primary-800 group-focus:text-primary-700 group-active:text-primary-500",
+        size == 'base' ? "text-lg" : "text-2xl"
+      )}
+    >
       {props.title}
     </div>
     <div class="flex gap-3 items-center">
@@ -45,5 +62,4 @@ const image = props.image ?? placeholderImage
       </div>
     </div>
   </div>
-
 </a>

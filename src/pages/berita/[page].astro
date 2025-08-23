@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BlogPost from '../../layouts/BlogPost.astro';
+import BeritaLayout from '../../layouts/BeritaLayout.astro';
+import PaginationLayout from '../../layouts/PaginationLayout.astro';
+import BeritaItem from '../../components/BeritaItem.astro';
+import Pagination from '../../components/Pagination.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const posts = (await getCollection('berita'))
+    .sort((a, b) => {
+      return b.data.date.valueOf() - a.data.date.valueOf();
+    });
+  return paginate(posts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+// type Props = CollectionEntry<'berita'>;
+
+const { page } = Astro.props;
+---
+<PaginationLayout
+  title={`Daftar Berita - ${page.currentPage}`}
+  description='daftar berita'
+>
+  <ul class="flex flex-col gap-8">
+    {page.data.map(d => (
+      <BeritaItem
+        date={d.data.date}
+        id={d.id.toString()}
+        title={d.data.title}
+        creator={"Admin BKD"}
+        image={d.data.coverImage}
+        size="lg"
+      />
+    ))}
+  </ul>
+
+  <Pagination
+    totalPages={page.lastPage}
+    currentPage={page.currentPage}
+    basePath="/berita"
+  />
+
+</PaginationLayout>

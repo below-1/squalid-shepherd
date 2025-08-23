@@ -12,6 +12,7 @@ import { getLatestPengumumanItems } from "../services/pengumuman";
 import { getGallerySnapshoot } from "../services/gallery"
 import BeritaItemVertical from "../components/BeritaItemVertical.astro";
 import { Image } from "astro:assets";
+import YoutubeSection from "../components/YoutubeSection.astro";
 
 const carouselItems = [
 	{
@@ -42,14 +43,6 @@ const apps = [
 ]
 
 const gallerySnapshoot = await getGallerySnapshoot()
-
-// type Props = {
-// 	items: CarouselItem[];
-// }
-
-// const { items } = Astro.props;
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <style>
@@ -96,7 +89,7 @@ const gallerySnapshoot = await getGallerySnapshoot()
 			</div>
 			<div class="flex items-center justify-center">
 				<a
-					href="/pengumuman"
+					href="/pengumuman/1"
 					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
 					>Lihat Selengkapnya</a
 				>
@@ -147,87 +140,7 @@ const gallerySnapshoot = await getGallerySnapshoot()
 	</div>
 
 
-	<div>
-		<ListingSnapshot
-			iconName="news"
-			title="Daftar Video"
-			listingRef="/"
-			class=""
-		>
-			<div class="grid grid-cols-12 gap-4">
-				<div class="col-span-8">
-					<div class="h-[550px] w-auto bg-neutral-100 dark:bg-black">
-						<div
-							class="container h-full mx-auto flex items-center justify-center"
-						>
-							<iframe
-								class="w-full h-full"
-								src="https://www.youtube.com/embed/VRPbg0zXj-c?si=1Uq68DrMb5MUHjfN"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerpolicy="strict-origin-when-cross-origin"
-								allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-span-4 flex flex-col gap-4">
-					<div class="h-full w-full bg-neutral-100 dark:bg-black">
-						<div
-							class="container h-full mx-auto flex items-center justify-center"
-						>
-							<iframe
-								class="w-full h-full"
-								src="https://www.youtube.com/embed/niZ8nm9Dmvk?si=8EjAEvvSqhwFQ8og"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerpolicy="strict-origin-when-cross-origin"
-								allowfullscreen></iframe>
-						</div>
-					</div>
-
-					<div class="h-full w-full bg-neutral-100 dark:bg-black">
-						<div
-							class="container h-full mx-auto flex items-center justify-center"
-						>
-							<iframe
-								class="w-full h-full"
-								src="https://www.youtube.com/embed/Nixn2Q88b4k?si=XGJmVp8nUcdupWWR"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerpolicy="strict-origin-when-cross-origin"
-								allowfullscreen></iframe>
-						</div>
-					</div>
-
-					<div class="h-full w-full bg-neutral-100 dark:bg-black">
-						<div
-							class="container h-full mx-auto flex items-center justify-center"
-						>
-							<iframe
-								class="w-full h-full"
-								src="https://www.youtube.com/embed/VRPbg0zXj-c?si=1Uq68DrMb5MUHjfN"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerpolicy="strict-origin-when-cross-origin"
-								allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="flex items-center justify-center my-8">
-				<a
-					href="/"
-					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
-					>Lihat Selengkapnya</a
-				>
-			</div>
-		</ListingSnapshot>
-	</div>
+	<YoutubeSection />
 
 	<div class="">
 		<ListingSnapshot
@@ -252,7 +165,7 @@ const gallerySnapshoot = await getGallerySnapshoot()
 			</div>
 			<div class="flex items-center justify-center">
 				<a
-					href="/berita"
+					href="/berita/1"
 					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
 					>Lihat Selengkapnya</a
 				>

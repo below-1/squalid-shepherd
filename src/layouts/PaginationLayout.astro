@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Header />
+		<div class="container mx-auto my-8 space-y-8">
+			<div class="flex gap-2 items-center">
+				<a href="/" class="underline">Home</a>
+				<Icon name="chevron-right" class="size-6 text-neutral-500" />
+				<a href="/" class="underline">Berita</a>
+				<Icon name="chevron-right" class="size-6 text-neutral-500" />
+				<span>{title}</span>
+			</div>
+
+			<div class="grid grid-cols-12 md:gap-8 lg:gap-12">
+				<main class="col-span-12 md:col-span-8 space-y-8 mb-16">
+					<slot></slot>
+				</main>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
