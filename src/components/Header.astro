@@ -2,20 +2,117 @@
 import NavMenuItem from "./NavMenuItem.astro";
 import SecondaryNavItem from "./SecondaryNavItem.astro";
 import SecondarySocItem from "./SecondarySocItem.astro";
-import logo from '../images/logo.png'
+import logo from "../images/logo.png";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-const menus = [
+type MenuItem = {
+	text: string;
+	url?: string;
+	open?: boolean;
+	active?: boolean;
+	children?: MenuItem[];
+};
+
+const currentPath = Astro.url.pathname;
+
+const prepareMenuItems = (currentPath: string, menus: MenuItem[]) => {
+	for (let parent of menus) {
+		if (parent.url) {
+			if (parent.url == currentPath) {
+				parent.active = true;
+			}
+		}
+		if (!parent.children) continue;
+		for (let item of parent.children) {
+			if (item.url == currentPath) {
+				parent.open = true;
+				item.active = true;
+			}
+		}
+	}
+	return menus;
+}
+
+const menus: MenuItem[] = prepareMenuItems(currentPath, [
 	{ text: "Beranda", url: "/" },
 	{ text: "Profil", url: "/profil" },
-	{ text: "Publikasi", url: "/publikasi" },
-	{ text: "Layanan", url: "/layanan" },
-	{ text: "Aplikasi", url: "/aplikasi" }
-]
+	{
+		text: "Publikasi",
+		url: "/publikasi",
+		children: [
+			{
+				text: "Berita",
+				url: "/berita/1",
+			},
+			{
+				text: "Pengumuman",
+				url: "/pengumuman/1",
+			},
+			{
+				text: "Rekapitulasi & Statistik ASN",
+				url: "/statistik/1",
+			},
+			{
+				text: "Buletin Gawai",
+				url: "/gawai/1",
+			},
+		],
+	},
+	{
+		text: "Layanan",
+		url: "/layanan",
+		children: [
+			{
+				text: "Pendataan Jabatan ASN GTK Prov. NTT",
+				url: "https://sites.google.com/view/pendataan-jab-asngtkntt",
+			},
+			{
+				text: "Portal PPID",
+				url: "https://sites.google.com/view/ppidbkdprovinsintt/menu",
+			},
+			{
+				text: "Whistleblowing system",
+				url: "/wbs-bkd-ntt",
+			},
+		],
+	},
+	{
+		text: "Aplikasi",
+		url: "/aplikasi",
+		children: [
+			{
+				text: "Dashboard Aplikasi BKD NTT",
+				url: "http://aplikasi.bkd.nttprov.go.id/",
+			},
+			{
+				text: "Assessment Center",
+				url: "https://ac.bkd.nttprov.go.id/",
+			},
+			{
+				text: "SIMPEG",
+				url: "http://aplikasi.bkd.nttprov.go.id/simpeg",
+			},
+			{
+				text: "SIPORA",
+				url: "http://aplikasi.bkd.nttprov.go.id/laporan",
+			},
+			{
+				text: "Survey Kepuasan",
+				url: "https://forms.gle/dBwaaV7ti1RFZRn79",
+			},
+			{
+				text: "Website Gawai",
+				url: "https://gawai.bkd.nttprov.go.id",
+			},
+		],
+	},
+]);
 ---
 
-<div class="Header fixed md:sticky top-0 z-80 transition-transform duration-300 ease-in-out">
+<div
+	class="Header fixed md:sticky top-0 z-80 transition-transform duration-300 ease-in-out"
+>
 	<header class="hidden md:block">
 		<div class="h-1 bg-accent-300 w-full"></div>
 		<div class="bg-primary-700 w-full">
@@ -31,7 +128,6 @@ const menus = [
 	<nav class="bg-white border-b border-neutral-300">
 		<div class="container mx-auto">
 			<div class="h-20 flex">
-	
 				<a href="/" class="flex items-center gap-2 pl-4 md:pl-0">
 					<Image
 						class="size-12"
@@ -40,54 +136,164 @@ const menus = [
 						decoding="async"
 					/>
 					<div class="flex flex-col">
-						<div class="text-primary-800 uppercase tracking-wider text-base md:text-lg leading-none font-black">BKD provinsi NTT</div>
-						<div class="text-xs md:text-sm leading-none">Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas</div>
+						<div
+							class="text-primary-800 uppercase tracking-wider text-base md:text-lg leading-none font-black"
+						>
+							BKD provinsi NTT
+						</div>
+						<div class="text-xs md:text-sm leading-none">
+							Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas
+						</div>
 					</div>
 				</a>
-	
+
 				<div class="hidden md:block md:grow"></div>
-	
+
 				<div class="hidden md:flex items-center">
-					{menus.map((menu, index) => (
-						<NavMenuItem {...menu} class={index == menus.length - 1 ? "pr-0" : ""} />
-					))}
+					{
+						menus.map((menu, index) => (
+							<NavMenuItem
+								{...menu}
+								class={index == menus.length - 1 ? "pr-0" : ""}
+							/>
+						))
+					}
 				</div>
 
-				<button class="flex md:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4">
+				<button
+					id="MobileMenuButton"
+					class="flex md:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4"
+				>
 					<Icon name="dashboard" class="size-8" />
 				</button>
-	
 			</div>
 		</div>
 	</nav>
+</div>
 
-	
+<div
+	id="HeaderBackdrop"
+	class="flex hidden transition-transform fixed inset-0 z-70 bg-black/10 backdrop-blur-sm"
+>
+	<ul class="pt-20 h-full w-4/5 bg-white flex flex-col items-stretch py-4">
+		{
+			menus.map((menu) => {
+				const Tag = menu.children?.length ? "button" : "a";
+				return (
+					<li class="MobileMenuItem flex flex-col">
+						<Tag
+							href={menu.url}
+							class="group w-full px-4 py-2 font-bold flex gap-4 items-center text-neutral-700 hover:text-black transition-colors"
+						>
+							<Icon name="chevron-right" class="size-4" />
+							<span>{menu.text}</span>
+						</Tag>
+						{menu.children && (
+							<ul
+								class:list={[
+									"Submenu overflow-y-clip ml-4",
+									menu.open && "Show",
+								]}
+							>
+								{menu.children.map((item) => (
+									<li class="flex flex-col">
+										<a
+											href={item.url}
+											class:list={[
+												"group w-full px-4 py-2 font-bold flex gap-4 items-center text-neutral-700 hover:text-black transition-colors",
+												item.active && "text-primary-600"
+											]}
+										>
+											<Icon name="chevron-right" class="size-4" />
+											<span>{item.text}</span>
+										</a>
+									</li>
+								))}
+							</ul>
+						)}
+					</li>
+				);
+			})
+		}
+	</ul>
 </div>
 
 <style>
 	.Header.behind {
 		transform: translateY(-100%); /* Move header off-screen */
 	}
+	#HeaderBackdrop {
+		bottom: calc(-1 * var(--spacing) * 20);
+	}
+	#HeaderBackdrop.behind {
+		transform: translateY(
+			calc(-1 * var(--spacing) * 20)
+		); /* Move header off-screen */
+	}
+
+	#HeaderBackdrop .MobileMenuItem .Submenu {
+		max-height: 0;
+		transition: all 0.3s ease-in-out;
+	}
+
+	#HeaderBackdrop .MobileMenuItem .Submenu.Show {
+		max-height: 500px;
+	}
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const header = document.querySelector('.Header');
-		if (!header) return;
+	document.addEventListener("DOMContentLoaded", function () {
+		const header = document.querySelector(".Header");
+		const backdrop = document.getElementById("HeaderBackdrop");
+		if (!header || !backdrop) return;
 		let lastScrollTop = 0;
 		const headerHeight = header.offsetHeight; // Get header height for accurate hiding
 
-		window.addEventListener('scroll', function() {
-			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+		window.addEventListener("scroll", function () {
+			let currentScroll =
+				window.pageYOffset || document.documentElement.scrollTop;
 
 			if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
 				// Scrolling down and past header height
-				header.classList.add('behind');
+				header.classList.add("behind");
+				backdrop.classList.add("behind");
 			} else {
 				// Scrolling up or near the top
-				header.classList.remove('behind');
+				header.classList.remove("behind");
+				backdrop.classList.remove("behind");
 			}
 			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 		});
+
+		const mobileButton = document.getElementById("MobileMenuButton");
+		if (mobileButton) {
+			mobileButton.addEventListener("click", (event) => {
+				if (backdrop?.classList.contains("hidden")) {
+					backdrop?.classList.remove("hidden");
+				} else {
+					backdrop?.classList.add("hidden");
+				}
+			});
+		}
+
+		const menuItemsWithChildren = document.querySelectorAll(
+			"#HeaderBackdrop .MobileMenuItem",
+		);
+		for (let item of menuItemsWithChildren) {
+			item.addEventListener("click", (event) => {
+				// event.preventDefault();
+				const tgt = event.target as Element;
+				const closestLinkAncestor = tgt.closest("a");
+				if (closestLinkAncestor) {
+					return;
+				}
+				const submenu = item.querySelector(".Submenu");
+				if (submenu?.classList.contains("Show")) {
+					submenu.classList.remove("Show");
+				} else {
+					submenu?.classList.add("Show");
+				}
+			});
+		}
 	});
 </script>
