@@ -44,4 +44,18 @@ const pengumuman = defineCollection({
 		}),
 });
 
-export const collections = { news, berita, pengumuman };
+const gallery = defineCollection({
+	// Load Markdown and MDX files in the `src/content/news/` directory.
+	loader: glob({ base: './gallery', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			credit: z.string().optional(),
+			// Transform string to Date object
+			date: z.coerce.date(),
+			image: image()
+		}),
+});
+
+export const collections = { news, berita, pengumuman, gallery };

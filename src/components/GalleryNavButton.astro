@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  direction: 'left' | 'right';
+  url?: string;
+}
+
+const { direction, url } = Astro.props;
+const Element = url ? 'a' : 'button';
+---
+
+<Element
+  href={url}
+  class="rounded-full p-1 border-4 border-primary-700 flex items-center justify-center cursor-pointer hover:bg-primary-100 transition-all">
+  <Icon
+    name={direction == 'left' ? "chevron-left" : "chevron-right"}
+    class="size-12"
+  />
+</Element>

@@ -9,7 +9,7 @@ import YoutubeVideo from "../components/YoutubeVideo.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
-import { getGallerySnapshoot } from "../services/gallery"
+import { getGalleryItems } from "../services/gallery"
 import BeritaItemVertical from "../components/BeritaItemVertical.astro";
 import { Image } from "astro:assets";
 import YoutubeSection from "../components/YoutubeSection.astro";
@@ -37,7 +37,7 @@ const apps = [
 	{ icon: "device", label: "Gawai", url: "https://gawai.bkd.nttprov.go.id/" },
 ]
 
-const gallerySnapshoot = await getGallerySnapshoot()
+const gallerySnapshoot = await getGalleryItems(12)
 ---
 
 <style>
@@ -174,18 +174,18 @@ const gallerySnapshoot = await getGallerySnapshoot()
 			title="Daftar Foto"
 			listingRef="/gallery"
 		>
-			<div class="grid grid-cols-4 gap-2">	
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-2">	
 				{gallerySnapshoot.items.map(item => (
 					<Image
-						src={item.image()}
-						alt={item.description}
+						src={item.image}
+						alt={item.title}
 						class="w-full h-64 object-cover"
 					/>
 				))}
 			</div>
 			<div class="flex items-center justify-center py-8">
 				<a
-					href="/gallery"
+					href="/gallery/1"
 					class="px-6 py-2 bg-transparent border border-neutral-300 text-lg font-bold hover:shadow-lg dark:text-white"
 					>Lihat Selengkapnya</a
 				>

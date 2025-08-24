@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  id: string;
+  image: ImageMetadata;
+  title?: string;
+  class?: string;
+}
+
+const props = Astro.props;
+---
+
+<a 
+  href={`/gallery/${props.id}`}
+  class:list={[
+    "flex cursor-pointer hover:shadow-xl hover:scale-105 transition-all",
+    props.class ?? ""
+  ]}
+>
+  <Image
+    src={props.image}
+    alt={props.title ?? "image description"}
+    title={props.title ?? "image description"}
+    class:list={[
+      "z-20 object-cover",
+      props.class ?? ""
+    ]}
+  />
+</a>

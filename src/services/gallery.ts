@@ -1,22 +1,21 @@
 import { faker } from '@faker-js/faker'
 import { range } from '../utils/range'
+import { getCollection } from 'astro:content';
 
-export async function getGallerySnapshoot() {
-  const n = 12
-  const total = faker.number.int({ min: 32, max: 70 })
-  const galleryImages = import.meta.glob<{ default: ImageMetadata }>("/src/images/gallery/*.{jpeg,jpg,png,gif}")
-  console.log(galleryImages)
-  console.log("galleryImages")
+export async function getGalleryItems(n: number = 10) {
+  const _items = await getCollection("gallery");
+  _items.sort((a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime()
+  })
 
-  const items = range(n).map(i => {
-    const image = galleryImages[`/src/images/gallery/${((i + 1) % 8) + 1}.jpg`]
-    // console.log(image)
+  const total = _items.length
+  const items = _items.slice(0, n).map(item => {
     return {
-      id: i,
-      creator: faker.internet.username(),
-      date: faker.date.past(),
-      description: faker.lorem.sentence(12),
-      image
+      id: item.id,
+      credit: item.data.credit,
+      date: item.data.date,
+      title: item.data.title,
+      image: item.data.image
     }
   })
   return {

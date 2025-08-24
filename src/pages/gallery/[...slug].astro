@@ -1,0 +1,59 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import BeritaLayout from '../../layouts/BeritaLayout.astro';
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import GalleryNavButton from '../../components/GalleryNavButton.astro';
+
+export async function getStaticPaths() {
+	const items = await getCollection('gallery');
+	return items.map((item, index) => ({
+		params: { slug: item.id },
+		props: {
+      item,
+      nextUrl: index < items.length - 1 ? `/gallery/${items[index + 1].id}` : undefined,
+      prevUrl: index > 0 ? `/gallery/${items[index - 1].id}` : undefined
+    }
+	}));
+}
+type Props = {
+  item: CollectionEntry<'gallery'>;
+  nextUrl?: string;
+  prevUrl?: string;
+}
+
+const { item, nextUrl, prevUrl } = Astro.props;
+const title = item.data.title
+---
+
+<GalleryLayout title={title} description={title}>
+	<div class="flex flex-col justify-center">
+    <Image
+      src={item.data.image}
+      alt={item.data.title}
+      class="object-cover w-full border-8 border-primary-800"
+    />
+    <div class="flex md:hidden col-span-10 flex-col items-center justify-center">
+      <h1 class="text-lg font-black leading-10 mt-8 mb-2">{item.data.title}</h1>
+      <h2 class="text-sm font-bold">Credit: {item.data.credit}</h2>
+    </div>
+    <div class="flex md:hidden items-center justify-between">
+      <GalleryNavButton url={prevUrl} direction='left'/>
+      <GalleryNavButton url={nextUrl} direction='right'/>
+    </div>
+    <div class="hidden md:grid grid-cols-12 items-center">
+      <div class="flex justify-start items-center">
+        <GalleryNavButton url={prevUrl} direction='left'/>
+      </div>
+      <div class="col-span-10 flex flex-col items-center justify-center">
+        <h1 class="text-lg font-black leading-10 mt-8 mb-2">{item.data.title}</h1>
+        <h2 class="text-sm font-bold">Credit: {item.data.credit}</h2>
+      </div>
+      <div class="flex justify-end items-center">
+        <GalleryNavButton url={nextUrl} direction='right'/>
+      </div>
+    </div>
+  </div>
+</GalleryLayout>

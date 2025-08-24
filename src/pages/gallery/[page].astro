@@ -1,0 +1,46 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BlogPost from '../../layouts/BlogPost.astro';
+import BeritaLayout from '../../layouts/BeritaLayout.astro';
+import PaginationLayout from '../../layouts/PaginationLayout.astro';
+import BeritaItem from '../../components/BeritaItem.astro';
+import Pagination from '../../components/Pagination.astro';
+import { Image } from 'astro:assets';
+import ImagePanel from '../../components/ImagePanel.astro';
+import fooImage from '../../images/carousel-2.jpg';
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const items = (await getCollection('gallery'))
+    .sort((a, b) => {
+      return b.data.date.valueOf() - a.data.date.valueOf();
+    });
+  return paginate(items, { pageSize: 12 });
+}) satisfies GetStaticPaths;
+
+// type Props = CollectionEntry<'berita'>;
+
+const { page } = Astro.props;
+---
+<PaginationLayout
+  title={`Daftar Foto - ${page.currentPage}`}
+  description='daftar foto'
+>
+  <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {page.data.map(item => (
+      <ImagePanel
+        id={item.id}
+        image={item.data.image}
+        title={item.data.title}
+      />
+    ))}
+  </ul>
+
+  <Pagination
+    totalPages={page.lastPage}
+    currentPage={page.currentPage}
+    basePath="/gallery"
+  />
+
+</PaginationLayout>
+
