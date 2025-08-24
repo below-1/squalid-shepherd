@@ -16,6 +16,8 @@ import YoutubeSection from "../components/YoutubeSection.astro";
 import carouseImage1 from "../images/carousel-1.png"
 import carouseImage2 from "../images/carousel-2.jpg"
 import carouseImage3 from "../images/carousel-3.jpg"
+import ImagePanel from "../components/ImagePanel.astro";
+import { imageConfig } from "astro:assets";
 
 const carouselItems = [
 	{ imageUrl: carouseImage1, active: false, description: "asa" },
@@ -176,10 +178,10 @@ const gallerySnapshoot = await getGalleryItems(12)
 		>
 			<div class="grid grid-cols-2 md:grid-cols-4 gap-2">	
 				{gallerySnapshoot.items.map(item => (
-					<Image
-						src={item.image}
-						alt={item.title}
-						class="w-full h-64 object-cover"
+					<ImagePanel
+						id={item.id}
+						image={item.image}
+						title={item.title}
 					/>
 				))}
 			</div>
