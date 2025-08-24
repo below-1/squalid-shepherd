@@ -4,13 +4,13 @@ export type PostLikeItem = {
   active?: boolean;
 
 	url: string;
-	image: string;
+	image?: ImageMetadata;
 	title: string;
 	subtitle: string;
 }
 
 export type ImageLikeItem = {
-	imageUrl: string;
+	imageUrl?: ImageMetadata;
 	description: string;
   active?: boolean;
 }

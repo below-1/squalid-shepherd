@@ -1,9 +1,14 @@
 ---
 import type { ImageLikeItem } from "./types";
+import placeholderImage from "../../images/news.png";
+import { Image } from "astro:assets";
 
 type Props = ImageLikeItem & { class?: string };
 
 const { class: className, ...props } = Astro.props;
+const image = props.imageUrl ?? placeholderImage;
+console.log(props);
+console.log("props");
 ---
 
 <div
@@ -16,8 +21,9 @@ const { class: className, ...props } = Astro.props;
     className && ""
   ]}
 >
-  <img 
-    src={props.imageUrl} 
+  <Image
+    src={image}
+    alt="image title"
     class="grow object-cover h-full"
   />
 </div>

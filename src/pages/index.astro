@@ -13,19 +13,14 @@ import { getGallerySnapshoot } from "../services/gallery"
 import BeritaItemVertical from "../components/BeritaItemVertical.astro";
 import { Image } from "astro:assets";
 import YoutubeSection from "../components/YoutubeSection.astro";
+import carouseImage1 from "../images/carousel-1.png"
+import carouseImage2 from "../images/carousel-2.jpg"
+import carouseImage3 from "../images/carousel-3.jpg"
 
 const carouselItems = [
-	{
-		url: "/foobar",
-		active: false,
-		title:
-			"Peningkatan Kompetensi PNS Melalui Pendidikan Formal di Lingkungan Pemerintah Provinsi Nusa Tenggara Timur",
-		subtitle: "Lorem Ipsum Doler Sit Amet",
-		image: "/images/carousel-1.png",
-	},
-	{ imageUrl: "/images/carousel-1.jpg", active: false, description: "asa" },
-	{ imageUrl: "/images/carousel-2.jpg", active: false, description: "asa" },
-	{ imageUrl: "/images/carousel-3.jpg", active: false, description: "asa" },
+	{ imageUrl: carouseImage1, active: false, description: "asa" },
+	{ imageUrl: carouseImage2, active: false, description: "asa" },
+	{ imageUrl: carouseImage3, active: false, description: "asa" },
 ];
 
 const pengumuman = await getLatestPengumumanItems();
