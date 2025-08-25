@@ -20,7 +20,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 <PaginationLayout
-  title={`Daftar Berita - ${page.currentPage}`}
+  title={`Daftar Berita - Halaman ${page.currentPage}`}
   description='daftar berita'
 >
   <ul class="flex flex-col gap-8">

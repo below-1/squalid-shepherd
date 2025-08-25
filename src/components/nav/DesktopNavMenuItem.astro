@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { MenuItem } from './types';
+
+type Props = MenuItem & { class?: string };
+
+const props = Astro.props;
+
+const Tag = (props.children && props.children.length) ? "button" : "a";
+---
+
+<Tag
+  href={props.url}
+  class="DesktopNavItem relative cursor-pointer text-primary-800 font-bold text-lg px-4 flex items-center gap-0.5"
+>
+  {props.children && props.children.length && 
+    <ul class="Submenu absolute left-0 top-full mt-1 bg-white hidden data-show:flex flex-col text-start shadow-2xl">
+      {props.children.map(item => 
+        <li>
+          <a class="flex whitespace-nowrap cursor-pointer text-primary-800 font-bold text-lg px-4 py-2" href={item.url}>{item.text}</a>
+        </li>)}
+    </ul>
+  }
+  <span>{Astro.props.text}</span>
+  {props.children && props.children.length && (
+    <Icon
+      name="chevron-down"
+      class="size-5"
+    />
+  )}
+</Tag>
+
