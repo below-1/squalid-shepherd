@@ -22,15 +22,19 @@ const { title, description } = Astro.props;
 
 	<body>
 		<Header />
-		<div class="max-w-7xl px-4 md:px-0 py-4 md:py-0 mx-auto my-8 mt-20 md:mt-8 space-y-8">
-			<div class="flex gap-2 items-center">
-				<a href="/" class="underline">Home</a>
-				<Icon name="chevron-right" class="size-6 text-neutral-500" />
-				<a href="/" class="underline">Berita</a>
-				<Icon name="chevron-right" class="size-6 text-neutral-500" />
-				<span>{title}</span>
+		<div class="bg-primary-800 text-white mt-20 md:mt-0">
+			<div class="Container px-4 md:px-0 py-12 md:py-24">
+				<div class="flex gap-2 items-center">
+					<a href="/" class="underline">Home</a>
+					<Icon name="chevron-right" class="size-6 text-neutral-500" />
+					<a href="/" class="underline">Berita</a>
+					<Icon name="chevron-right" class="size-6 text-neutral-500" />
+					<span>{title}</span>
+				</div>
+				<h1 class="font-mono text-accent-100 font-bold text-xl md:text-3xl lg:text-4xl">Daftar Pengumuman - Halaman 1</h1>
 			</div>
-
+		</div>
+		<div class="max-w-7xl px-4 md:px-0 py-4 md:py-0 mx-auto my-8 mt-20 md:mt-8 space-y-8">
 			<div class="grid grid-cols-12 md:gap-8 lg:gap-12">
 				<main class="col-span-12 md:col-span-12 space-y-8 mb-16">
 					<slot></slot>

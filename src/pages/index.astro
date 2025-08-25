@@ -9,13 +9,17 @@ import YoutubeVideo from "../components/YoutubeVideo.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
-import { getGalleryItems } from "../services/gallery"
+import { getGalleryItems } from "../services/gallery";
 import BeritaItemVertical from "../components/BeritaItemVertical.astro";
 import { Image } from "astro:assets";
 import YoutubeSection from "../components/YoutubeSection.astro";
-import carouseImage1 from "../images/carousel-1.png"
-import carouseImage2 from "../images/carousel-2.jpg"
-import carouseImage3 from "../images/carousel-3.jpg"
+import carouseImage1 from "../images/carousel-1.png";
+import carouseImage2 from "../images/carousel-2.jpg";
+import carouseImage3 from "../images/carousel-3.jpg";
+import hut80White from "../images/hut80/HUTRI80_FA_Logogram_White.png";
+import logoBig from "../images/logo-big.png";
+import fist from "../images/fist.jpg";
+import heroBg from '../images/hero-bg.jpg'
 import ImagePanel from "../components/ImagePanel.astro";
 import { imageConfig } from "astro:assets";
 
@@ -28,18 +32,36 @@ const carouselItems = [
 const pengumuman = await getLatestPengumumanItems();
 const berita = await getLatestBeritaItems();
 
-
-
 const apps = [
-	{ icon: "dashboard", label: "Dashboard", url: "http://aplikasi.bkd.nttprov.go.id/" },
-	{ icon: "assessment", label: "Assessment Center", url: "https://ac.bkd.nttprov.go.id/" },
-	{ icon: "people", label: "Simpeg", url: "http://aplikasi.bkd.nttprov.go.id/simpeg" },
-	{ icon: "app", label: "Sipora", url: "https://bkd.nttprov.go.id/web/laporan/" },
-	{ icon: "form", label: "Survey Kepuasan", url: "https://docs.google.com/forms/d/e/1FAIpQLSfpoi9QZAFGg-ha6q5xDAWwvMVYTl7O1e4dqBUJXocHFvpIQA/viewform" },
+	{
+		icon: "dashboard",
+		label: "Dashboard",
+		url: "http://aplikasi.bkd.nttprov.go.id/",
+	},
+	{
+		icon: "assessment",
+		label: "Assessment Center",
+		url: "https://ac.bkd.nttprov.go.id/",
+	},
+	{
+		icon: "people",
+		label: "Simpeg",
+		url: "http://aplikasi.bkd.nttprov.go.id/simpeg",
+	},
+	{
+		icon: "app",
+		label: "Sipora",
+		url: "https://bkd.nttprov.go.id/web/laporan/",
+	},
+	{
+		icon: "form",
+		label: "Survey Kepuasan",
+		url: "https://docs.google.com/forms/d/e/1FAIpQLSfpoi9QZAFGg-ha6q5xDAWwvMVYTl7O1e4dqBUJXocHFvpIQA/viewform",
+	},
 	{ icon: "device", label: "Gawai", url: "https://gawai.bkd.nttprov.go.id/" },
-]
+];
 
-const gallerySnapshoot = await getGalleryItems(12)
+const gallerySnapshoot = await getGalleryItems(12);
 ---
 
 <style>
@@ -53,19 +75,22 @@ const gallerySnapshoot = await getGalleryItems(12)
 </style>
 
 <Layout>
-	<div class="container mx-auto py-8 space-y-8 mt-20 md:mt-0">
-		<Carousel items={carouselItems} time={10 * 1000} class="h-[500px] md:h-[700px]" />
-		<div
-			class="w-full bg-accent-100 flex items-center justify-center flex-col text-primary-800 py-16 md:py-24 border border-neutral-200"
-		>
-			<p class="cookie-regular text-3xl md:text-6xl md:max-w-3/5 font-bold text-center">
-				Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Berintegritas, Tulus,
-				dan Ikhlas
-			</p>
+	
+	<div 
+		class="w-full mt-20 md:mt-0 h-48 md:h-96 overflow-hidden bg-cover bg-fixed bg-bottom flex relative"
+	>
+		<div class="z-30 absolute inset-0 bg-primary-900"></div>
+		<div class="Container absolute inset-0 z-40 px-4 lg:px-0 flex items-center justify-between h-full">
+			<h1 class="px-0 md:px-0 font-mono text-lg md:text-4xl lg:text-6xl text-start font-bold text-accent-100 border-b-8 pb-4 border-accent-300">Website Resmi<br/>Badan Kepegawaian Daerah<br/>Provinsi Nusa Tenggara Timur</h1>
+			<Image
+				src={logoBig}
+				alt="carousel 1"
+				class="w-auto h-20 md:h-48"
+			/>
 		</div>
 	</div>
 
-	<div class="bg-neutral-50">
+	<div>
 		<ListingSnapshot
 			iconName="announcement"
 			title="Kilasan Pengumuman"
@@ -94,6 +119,52 @@ const gallerySnapshoot = await getGalleryItems(12)
 		</ListingSnapshot>
 	</div>
 
+	<div class="Container">
+		<ListingSnapshot
+			iconName="announcement"
+			title="Tentang Badan Kepegawaian Provinsi NTT"
+			listingRef="/layanan"
+		>
+			<div
+				class="w-full bg-accent-200 flex items-center justify-center flex-col text-primary-800 py-16"
+			>
+				<p
+					class="font-mono text-3xl md:text-4xl font-bold text-center"
+				>
+					Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Berintegritas, Tulus,
+					dan Ikhlas
+				</p>
+			</div>
+			<div class="text-base md:text-xl leading-6 md:leading-8 space-y-6">
+				<p>
+					Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur lahir sebagai
+					konsekuensi pelaksanaan otonomi daerah dengan ditetapkannya
+					Undang-Undang Nomor 32 tahun 2004 tentang Pemerintahan Daerah, dimana
+					dalam salah satu pasalnya mengisyaratkan adanya kewenangan pelaksanaan
+					manajemen kepegawaian daerah.
+				</p>
+				<p>
+					Menindaklanjuti pelaksanaan otonomi daerah maka penataan organisasi
+					perangkat daerah di lingkungan Pemerintah Provinsi Nusa Tenggara Timur
+					yang menempatkan fungsi manajemen kepegawaian yang semula dilaksanakan
+					oleh Biro Kepegawaian Daerah Sekretariat Daerah Provinsi Nusa Tenggara
+					Timur, dialihkan menjadi lembaga tersendiri yang melaksanakan fungsi
+					manajemen kepegawaian yaitu Badan Kepegawaian Daerah.
+				</p>
+			</div>
+		</ListingSnapshot>
+	</div>
+	
+	<div class="Container">
+		<Carousel
+			items={carouselItems}
+			time={10 * 1000}
+			class="h-[500px] md:h-[600px]"
+		/>
+	</div>
+
+	
+
 	<!-- Daftar Layanan -->
 	<div>
 		<ListingSnapshot
@@ -102,40 +173,31 @@ const gallerySnapshoot = await getGalleryItems(12)
 			listingRef="/layanan"
 		>
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
-				{apps.map(app => (
-					<a 
-						href={app.url}
-						class="group bg-neutral-100 h-48 md:h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
-						title={app.label}
-					>
-						<div class="grow grid items-center justify-center">
-							<Icon name={app.icon} class="size-20 md:size-32 group-hover:text-primary-600" />
-						</div>
-						<p class="font-black text-center underline group-hover:text-primary-600">{app.label}</p>
-					</a>
-				))}
+				{
+					apps.map((app) => (
+						<a
+							href={app.url}
+							class="group bg-neutral-100 h-48 md:h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
+							title={app.label}
+						>
+							<div class="grow grid items-center justify-center">
+								<Icon
+									name={app.icon}
+									class="size-20 md:size-32 group-hover:text-primary-600"
+								/>
+							</div>
+							<p class="font-black text-center underline group-hover:text-primary-600">
+								{app.label}
+							</p>
+						</a>
+					))
+				}
 			</div>
 		</ListingSnapshot>
 	</div>
 
 	<!-- Sekilas Tentang BKD -->
-	<div>
-		<ListingSnapshot
-			iconName="announcement"
-			title="Tentang BKD"
-			listingRef="/layanan"
-		>
-			<div class="text-base md:text-xl leading-6 md:leading-8 space-y-6">
-				<p>
-					Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur lahir sebagai konsekuensi pelaksanaan otonomi daerah dengan ditetapkannya Undang-Undang Nomor 32 tahun 2004 tentang Pemerintahan Daerah, dimana dalam salah satu pasalnya mengisyaratkan adanya kewenangan pelaksanaan manajemen kepegawaian daerah.
-				</p>
-				<p>
-					Menindaklanjuti pelaksanaan otonomi daerah maka penataan organisasi perangkat daerah di lingkungan Pemerintah Provinsi Nusa Tenggara Timur yang menempatkan fungsi manajemen kepegawaian yang semula dilaksanakan oleh Biro Kepegawaian Daerah Sekretariat Daerah Provinsi Nusa Tenggara Timur, dialihkan menjadi lembaga tersendiri yang melaksanakan fungsi manajemen kepegawaian yaitu Badan Kepegawaian Daerah.
-				</p>
-			</div>
-		</ListingSnapshot>
-	</div>
-
+	
 
 	<YoutubeSection />
 
@@ -176,14 +238,12 @@ const gallerySnapshoot = await getGalleryItems(12)
 			title="Daftar Foto"
 			listingRef="/gallery"
 		>
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-2">	
-				{gallerySnapshoot.items.map(item => (
-					<ImagePanel
-						id={item.id}
-						image={item.image}
-						title={item.title}
-					/>
-				))}
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+				{
+					gallerySnapshoot.items.map((item) => (
+						<ImagePanel id={item.id} image={item.image} title={item.title} />
+					))
+				}
 			</div>
 			<div class="flex items-center justify-center py-8">
 				<a
