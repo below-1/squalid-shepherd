@@ -23,3 +23,23 @@ export async function getGalleryItems(n: number = 10) {
     items
   }
 }
+
+export async function getCarouselItems() {
+  let _items = await getCollection("gallery");
+  _items = _items.filter(it => it.data.isCarousel);
+
+  const total = _items.length
+  const items = _items.map(item => {
+    return {
+      id: item.id,
+      credit: item.data.credit,
+      date: item.data.date,
+      title: item.data.title,
+      image: item.data.image
+    }
+  })
+  return {
+    total,
+    items
+  }
+}

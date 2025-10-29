@@ -8,7 +8,7 @@ import PengumumanItem from "../components/PengumumanItem.astro";
 import Layout from "../layouts/Layout.astro";
 import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
-import { getGalleryItems } from "../services/gallery";
+import { getCarouselItems, getGalleryItems } from "../services/gallery";
 import { Image } from "astro:assets";
 import YoutubeSection from "../components/YoutubeSection.astro";
 import carouseImage1 from "../images/carousel-1.png";
@@ -17,11 +17,11 @@ import carouseImage3 from "../images/carousel-3.jpg";
 import logoBig from "../images/logo-big.png";
 import ImagePanel from "../components/ImagePanel.astro";
 
-const carouselItems = [
-	{ imageUrl: carouseImage1, active: false, description: "asa" },
-	{ imageUrl: carouseImage2, active: false, description: "asa" },
-	{ imageUrl: carouseImage3, active: false, description: "asa" },
-];
+const carouselItems = (await getCarouselItems()).items.map(it => ({
+	imageUrl: it.image,
+	description: "",
+	active: true
+}));
 
 const pengumuman = await getLatestPengumumanItems();
 const berita = await getLatestBeritaItems();

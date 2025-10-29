@@ -52,6 +52,7 @@ const gallery = defineCollection({
 		z.object({
 			title: z.string(),
 			credit: z.string().optional(),
+			isCarousel: z.coerce.boolean().optional(),
 			// Transform string to Date object
 			date: z.coerce.date(),
 			image: image()

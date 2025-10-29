@@ -30,7 +30,7 @@ const prepareMenuItems = (currentPath: string, menus: MenuItem[]) => {
 
 const menus: MenuItem[] = prepareMenuItems(currentPath, [
 	{ text: "Beranda", url: "/" },
-	{ text: "Profil", url: "/profil" },
+	{ text: "Profil", url: "/berita/profil" },
 	{
 		text: "Publikasi",
 		url: "/publikasi",
@@ -111,10 +111,18 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 		<div class="h-1 bg-accent-300 w-full"></div>
 		<div class="bg-primary-700 w-full">
 			<div class="h-8 md:max-w-7xl mx-auto flex gap-6 text-white px-4 lg:pl-0">
-				<SecondaryNavItem icon="telephone" content="+62-82299395149" />
-				<SecondaryNavItem icon="email" content="kepegawaian@bkd.nttprov.go.id" />
+				<SecondaryNavItem 
+					icon="telephone" 
+					content="+62-82299395149" 
+					url="https://wa.me/6282299395149"
+				/>
+				<SecondaryNavItem 
+					icon="email" 
+					content="kepegawaian@bkd.nttprov.go.id"
+					url="mailto:kepegawaian@bkd.nttprov.go.id"
+				/>
 				<div class="hidden md:block md:grow"></div>
-				<SecondarySocItem url="http://www.instagram.com/bkdprovinsintt/" text="Instagram" icon="instagram" />
+				<SecondarySocItem url="http://www.instagram.com/bkdprovinsintt/" text="Instagram" icon="instagram" target="_blank" />
 				<SecondarySocItem url="/gallery/1" text="Gallery" icon="gallery" />
 			</div>
 		</div>

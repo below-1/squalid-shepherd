@@ -5,12 +5,13 @@ type Props = {
   url: string;
   text: string;
   icon: string;
+  target?: string;
 }
 
-const { url, text, icon } = Astro.props;
+const { url, text, icon, target } = Astro.props;
 ---
 
-<a href={url} class="flex gap-1 items-center">
+<a href={url} class="flex gap-1 items-center" target={target}>
   <Icon name={icon} class="size-4" />
   <div class="text-sm">{text}</div>
 </a>
