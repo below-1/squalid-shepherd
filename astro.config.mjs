@@ -12,7 +12,7 @@ import vercelStatic from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://bkd.nttprov.go.id',
 
   integrations: [
     mdx(), 
