@@ -110,7 +110,7 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 	<header class="hidden md:block">
 		<div class="h-1 bg-accent-300 w-full"></div>
 		<div class="bg-primary-700 w-full">
-			<div class="h-8 md:max-w-7xl mx-auto flex gap-6 text-white">
+			<div class="h-8 md:max-w-7xl mx-auto flex gap-6 text-white px-4 lg:pl-0">
 				<SecondaryNavItem icon="telephone" content="+62-82299395149" />
 				<SecondaryNavItem icon="email" content="kepegawaian@bkd.nttprov.go.id" />
 				<div class="hidden md:block md:grow"></div>
@@ -122,7 +122,7 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 	<nav class="bg-white border-b border-neutral-300">
 		<div class="md:max-w-7xl mx-auto">
 			<div class="h-20 flex">
-				<a href="/" class="flex items-center gap-2 pl-4 md:pl-0 h-full">
+				<a href="/" class="flex items-center gap-2 pl-4 lg:pl-0 h-full grow">
 					<Image
 						class="size-12"
 						src={logo}
@@ -141,9 +141,9 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 					</div>
 				</a>
 
-				<div class="hidden md:block md:grow"></div>
+				<div class="hidden lg:block lg:grow"></div>
 
-				<div class="hidden md:flex">
+				<div class="hidden lg:flex">
 					{
 						menus.map((menu, index) => (
 							<DesktopNavMenuItem
@@ -156,7 +156,7 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 
 				<button
 					id="MobileMenuButton"
-					class="flex md:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4"
+					class="flex lg:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4"
 				>
 					<Icon name="dashboard" class="size-8" />
 				</button>
