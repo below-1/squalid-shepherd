@@ -11,9 +11,7 @@ import { getLatestPengumumanItems } from "../services/pengumuman";
 import { getCarouselItems, getGalleryItems } from "../services/gallery";
 import { Image } from "astro:assets";
 import YoutubeSection from "../components/YoutubeSection.astro";
-import carouseImage1 from "../images/carousel-1.png";
-import carouseImage2 from "../images/carousel-2.jpg";
-import carouseImage3 from "../images/carousel-3.jpg";
+
 import logoBig from "../images/logo-big.png";
 import ImagePanel from "../components/ImagePanel.astro";
 
@@ -171,6 +169,7 @@ const gallerySnapshoot = await getGalleryItems(12);
 					apps.map((app) => (
 						<a
 							href={app.url}
+							target="_blank"
 							class="group bg-neutral-100 h-48 md:h-64 py-8 w-full flex flex-col items-center justify-center gap-2"
 							title={app.label}
 						>
@@ -249,5 +248,5 @@ const gallerySnapshoot = await getGalleryItems(12);
 		</ListingSnapshot>
 	</div>
 
-	<!-- <Map /> -->
+	<Map />
 </Layout>

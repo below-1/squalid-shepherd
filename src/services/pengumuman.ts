@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 export async function getLatestPengumumanItems(n: number = 6) {
   const _items = await getCollection("pengumuman")
   _items.sort((a, b) => {
-    return a.data.date.getTime() - b.data.date.getTime()
+    return b.data.date.getTime() - a.data.date.getTime()
   })
   // console.log(_items)
 
