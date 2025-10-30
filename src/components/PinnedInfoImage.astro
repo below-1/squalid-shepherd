@@ -1,0 +1,137 @@
+---
+import { colors } from "../utils/colors";
+export type PaletteKey = 'palette-1' | 'palette-2' | 'palette-3';
+
+export type PinnedInfoImageProps = {
+  paletteKey: PaletteKey;
+  mainTerm: string;
+  secondaryTerm: string;
+};
+
+type Props = PinnedInfoImageProps;
+
+const props = Astro.props;
+const color = colors[props.paletteKey];
+---
+
+<div class="group h-full overflow-clip" style={{ background: color.main }}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 250 250"
+    role="img"
+    aria-labelledby="title desc"
+    class="svg-responsive transition-all scale-90 group-hover:scale-110"
+  >
+    <!-- red background -->
+    <rect x="0" y="0" width="100%" height="100%" fill={color.main} />
+  
+    <!-- outer circle -->
+    <circle cx="125" cy="125" r="90" fill="white" stroke="white" stroke-width="4" />
+    <circle cx="125" cy="125" r="90" fill="none" stroke={color.main} stroke-width="4" />
+    <circle cx="125" cy="125" r="96" fill="none" stroke="white" stroke-width="4" />
+  
+    <path
+      id="innerArc"
+      d="M125,125 m -70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"
+      fill="none"
+    />
+  
+    <text font-family="sans-serif" font-size="16" letter-spacing="1" fill={color.main}>
+      <textPath href="#innerArc" startOffset="50%" text-anchor="middle">
+        bkd provinsi ntt
+      </textPath>
+    </text>
+  
+    <circle cx="40" cy="160" r="14" fill={color.main} stroke="white" stroke-width="3" />
+    <circle cx="60" cy="188" r="9" fill={color.main} stroke="white" stroke-width="3" />
+  
+    <text
+      font-family="sans-serif"
+      font-size="38"
+      letter-spacing="1"
+      x="125"
+      y="125"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill={color.main}
+      class="img-pinned-text"
+    >
+      {props.mainTerm}
+    </text>
+  
+    <text
+      font-family="sans-serif"
+      font-size="20"
+      letter-spacing="1"
+      x="125"
+      y="150"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill={color.main}
+      class="img-pinned-text"
+    >
+      {props.secondaryTerm}
+    </text>
+  
+    <!-- lightbulb shapes -->
+    <g transform="translate(40,40) scale(0.9) rotate(25 24 24)">
+      <g fill="none" stroke-width="3">
+        <path
+          fill={color.secondary}
+          d="M13.516 33.383C9.55 30.271 7 25.433 7 20c0-9.389 7.611-17 17-17s17 7.611 17 17c0 5.433-2.549 10.271-6.516 13.383a67 67 0 0 1-.971 3.48c-.307.998-1.136 1.723-2.175 1.832C29.945 38.84 27.596 39 24 39s-5.945-.16-7.338-.305c-1.039-.109-1.868-.834-2.174-1.833c-.287-.933-.65-2.18-.972-3.479"
+        />
+        <path
+          fill="#fff"
+          d="M16.488 38.67c.203 1.31.414 2.502.59 3.444c.25 1.325 1.192 2.389 2.525 2.59c1.046.159 2.499.296 4.397.296c1.805 0 3.288-.124 4.417-.272c1.584-.208 2.694-1.526 2.866-3.114l.321-2.962a3 3 0 0 1-.266.042C29.945 38.84 27.596 39 24 39s-5.945-.16-7.338-.306a3 3 0 0 1-.174-.024"
+        />
+        <path
+          stroke={color.main}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.516 33.383C9.55 30.271 7 25.433 7 20c0-9.389 7.611-17 17-17s17 7.611 17 17c0 5.433-2.549 10.271-6.516 13.383a67 67 0 0 1-.971 3.48c-.307.998-1.136 1.723-2.175 1.832C29.945 38.84 27.596 39 24 39s-5.945-.16-7.338-.305c-1.039-.109-1.868-.834-2.174-1.833c-.287-.933-.65-2.18-.972-3.479"
+        />
+        <path
+          stroke={color.main}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.488 38.67c.203 1.31.414 2.502.59 3.444c.25 1.325 1.192 2.389 2.525 2.59c1.046.159 2.499.296 4.397.296c1.805 0 3.288-.124 4.417-.272c1.584-.208 2.694-1.526 2.866-3.114l.321-2.962M34 19c0-5.523-4.477-10-10-10"
+        />
+      </g>
+    </g>
+  
+    <g transform="translate(120,20) scale(1.4)">
+      <g fill={color.main}>
+        <path
+          fill={color.main}
+          stroke="white"
+          d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"
+        />
+      </g>
+    </g>
+  
+    <g transform="translate(140,30) scale(1.2)">
+      <g fill={color.main}>
+        <path
+          fill={color.main}
+          stroke="white"
+          d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .img-pinned-text {
+    font-weight: bold;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+  }
+
+  .svg-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    max-width: 100%;
+    flex: 1;
+  }
+</style>

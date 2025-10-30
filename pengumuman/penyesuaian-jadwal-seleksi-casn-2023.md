@@ -1,6 +1,9 @@
 ---
 title: Penyesuaian Jadwal Seleksi CASN 2023
 date: 2023-10-09T00:00:00.000Z
+pinned: true
+pinnedMainTerm: CPNS
+pinnedSecondaryTerm: "2023"
 categories:
   - pengumuman
 tags:

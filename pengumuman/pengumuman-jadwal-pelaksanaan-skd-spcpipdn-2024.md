@@ -2,6 +2,9 @@
 title: Pengumuman Jadwal, Lokasi, & Ketentuan Pelaksanaan Seleksi Kompetensi
   Dasar (SKD) Pada SPCP IPDN Tahun 2024
 date: 2024-07-13T00:00:00.000Z
+pinned: true
+pinnedMainTerm: IPDN
+pinnedSecondaryTerm: "2024"
 categories:
   - pengumuman
 coverImage: ../images/IMG_2631.jpeg

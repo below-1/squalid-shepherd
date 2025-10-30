@@ -14,6 +14,8 @@ import YoutubeSection from "../components/YoutubeSection.astro";
 
 import logoBig from "../images/logo-big.png";
 import ImagePanel from "../components/ImagePanel.astro";
+import PinnedInfoSection from "../components/PinnedInfoSection.astro";
+import { getPinnedItems } from "../services/pinned-infos";
 
 const carouselItems = (await getCarouselItems()).items.map(it => ({
 	imageUrl: it.image,
@@ -23,6 +25,9 @@ const carouselItems = (await getCarouselItems()).items.map(it => ({
 
 const pengumuman = await getLatestPengumumanItems();
 const berita = await getLatestBeritaItems();
+const gallerySnapshoot = await getGalleryItems(12);
+const pinnedItems = await getPinnedItems();
+console.log('pinnedItems.length = ', pinnedItems.length);
 
 const apps = [
 	{
@@ -53,7 +58,7 @@ const apps = [
 	{ icon: "device", label: "Gawai", url: "https://gawai.bkd.nttprov.go.id/" },
 ];
 
-const gallerySnapshoot = await getGalleryItems(12);
+
 ---
 
 <style>
@@ -81,6 +86,10 @@ const gallerySnapshoot = await getGalleryItems(12);
 			/>
 		</div>
 	</div>
+
+	<PinnedInfoSection 
+		items={pinnedItems}
+	/>
 
 	<div>
 		<ListingSnapshot
@@ -117,17 +126,7 @@ const gallerySnapshoot = await getGalleryItems(12);
 			title="Tentang Badan Kepegawaian Provinsi NTT"
 			listingRef="/layanan"
 		>
-			<div
-				class="w-full bg-accent-200 flex items-center justify-center flex-col text-primary-800 py-16"
-			>
-				<p
-					class="font-mono text-3xl md:text-4xl font-bold text-center"
-				>
-					Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Berintegritas, Tulus,
-					dan Ikhlas
-				</p>
-			</div>
-			<div class="text-base md:text-xl leading-6 md:leading-8 space-y-6">
+			<div class="text-base md:text-xl leading-6 md:leading-8 space-y-6 mt-8">
 				<p>
 					Badan Kepegawaian Daerah Provinsi Nusa Tenggara Timur lahir sebagai
 					konsekuensi pelaksanaan otonomi daerah dengan ditetapkannya
@@ -248,5 +247,15 @@ const gallerySnapshoot = await getGalleryItems(12);
 		</ListingSnapshot>
 	</div>
 
-	<Map />
+	<!-- <Map /> -->
 </Layout>
+
+<style>
+	.img-pinned-text {
+		font-weight: bold;
+		filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+	}
+
+	
+
+</style>

@@ -2,6 +2,9 @@
 title: Pengumuman Penyerahan SK PPPK Tahap I Lingkup Pemerintah Provinsi Nusa
   Tenggara Timur Formasi Tahun 2024
 date: 2025-07-23T00:00:00.000Z
+pinned: true
+pinnedMainTerm: PPPK
+pinnedSecondaryTerm: "2024"
 categories:
   - pengumuman
 tags:

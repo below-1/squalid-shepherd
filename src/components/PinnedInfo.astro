@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import { id } from "date-fns/locale";
+import { format } from "date-fns";
+import PinnedInfoImage from "./PinnedInfoImage.astro";
+import type { PinnedInfoImageProps } from "./PinnedInfoImage.astro"; 
+import { twMerge } from "tailwind-merge";
+import { Icon } from "astro-icon/components";
+
+export type PinnedInfoProps = {
+  pinnedInfoProps?: PinnedInfoImageProps;
+  url: string;
+  title: string;
+  date: Date;
+  creator: string;
+  image?: ImageMetadata;
+}
+type Props = PinnedInfoProps;
+
+const props = Astro.props;
+
+const fullDate = format(props.date, "dd MMMM yyyy", { locale: id });
+---
+
+<div class="min-w-full lg:min-w-1/3 h-full border border-neutral-300 flex flex-col overflow-hidden shadow-lg">
+  <div class="max-h-4/6">
+    { props.image && (
+      <Image src={props.image} alt="sas" 
+        class={twMerge(
+          "shrink-0 flex flex-col",
+          "object-fill"
+        )}
+      />
+    )} 
+    {!props.image && props.pinnedInfoProps && (
+      <PinnedInfoImage
+        {...props.pinnedInfoProps}
+      />
+    )}
+  </div>
+  <a href={props.url} class="group p-4 bg-white grow flex flex-col">
+    <div class="grow">
+      <p class="leading-7 text-lg font-medium py-1 line-clamp-2 group-focus:outline-4 group-focus:outline-offset-4 group-focus:outline-black! group-focus:outline-dashed">{props.title}</p>
+    </div>
+    <div class="flex gap-3 items-center text-xs md:text-sm">
+      <div class="flex items-center gap-1">
+        <Icon name="calendar" />
+        <div class="">{fullDate}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="user" />
+        <div class="">{props.creator}</div>
+      </div>
+      <div class="flex items-center gap-1">
+        <Icon name="eye" />
+        <div class="">400</div>
+      </div>
+    </div>
+  </a>
+</div>

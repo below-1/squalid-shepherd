@@ -23,6 +23,9 @@ const berita = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			pinned: z.coerce.boolean().optional(),
+			pinnedMainTerm: z.string().optional(),
+			pinnedSecondaryTerm: z.string().optional(),
 			categories: z.array(z.string()),
 			// Transform string to Date object
 			date: z.coerce.date(),
@@ -37,6 +40,9 @@ const pengumuman = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			pinned: z.coerce.boolean().optional(),
+			pinnedMainTerm: z.string().optional(),
+			pinnedSecondaryTerm: z.string().optional(),
 			categories: z.array(z.string()),
 			// Transform string to Date object
 			date: z.coerce.date(),
