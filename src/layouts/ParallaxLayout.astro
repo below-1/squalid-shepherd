@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Search from '../components/Search.astro';
 import '../styles/global.css';
 ---
 
@@ -27,9 +28,11 @@ import '../styles/global.css';
 	<body>
     <div id="Wrapper" class="">
       <Header />
+      <Search />
       <slot />
       <Footer />
     </div>
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
 	</body>
 </html>
 

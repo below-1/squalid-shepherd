@@ -5,6 +5,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import Search from '../components/Search.astro';
 import { Icon } from 'astro-icon/components';
 import { getLatestBeritaItems } from "../services/berita";
 import { getLatestPengumumanItems } from "../services/pengumuman";
@@ -27,6 +28,7 @@ const berita = await getLatestBeritaItems(4);
 
 	<body class="bg-neutral-100">
 		<Header />
+		<Search />
 		<div class="bg-primary-800 text-white mt-20 md:mt-0">
 			<div class="Container px-4 md:px-0 py-12 md:py-24">
 				<div class="flex gap-2 items-center">
@@ -129,5 +131,6 @@ const berita = await getLatestBeritaItems(4);
 			</div>
 		</div>
 		<Footer />
+		<script is:inline src="/pagefind/pagefind-ui.js"></script>
 	</body>
 </html>
