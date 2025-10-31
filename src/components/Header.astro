@@ -105,7 +105,7 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 ---
 
 <div
-	class="Header fixed md:sticky top-0 z-80 transition-transform duration-300 ease-in-out"
+	class="Header w-full fixed md:sticky top-0 z-80 transition-transform duration-300 ease-in-out"
 >
 	<header class="hidden md:block">
 		<div class="h-1 bg-accent-300 w-full"></div>
@@ -129,21 +129,21 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 	</header>
 	<nav class="bg-white border-b border-neutral-300">
 		<div class="md:max-w-7xl mx-auto">
-			<div class="h-20 flex">
+			<div class="h-16 md:h-20 flex">
 				<a href="/" class="flex items-center gap-2 pl-4 lg:pl-0 h-full grow">
 					<Image
-						class="size-12"
+						class="size-8 md:size-12"
 						src={logo}
 						alt="BKD Provinsi NTT"
 						decoding="async"
 					/>
-					<div class="flex flex-col">
+					<div class="grow flex flex-col">
 						<div
-							class="text-primary-800 uppercase tracking-wider text-base md:text-lg leading-none font-black"
+							class="text-primary-800 uppercase tracking-wider text-sm md:text-lg leading-none font-black"
 						>
 							BKD provinsi NTT
 						</div>
-						<div class="text-xs md:text-sm leading-none">
+						<div class="text-[8px] md:text-sm leading-none">
 							Melayani dengan Cerdas, Cepat, Bertanggung Jawab, Tulus dan Ikhlas
 						</div>
 					</div>
@@ -164,9 +164,15 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 
 				<button
 					id="MobileMenuButton"
-					class="flex lg:hidden h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4"
+					class="flex lg:hidden h-16 md:h-20 items-center justify-center bg-white border-l border-neutral-300 cursor-pointer px-4"
 				>
-					<Icon name="dashboard" class="size-8" />
+					<Icon name="dashboard" class="size-6" />
+				</button>
+				<button
+					id="search-toggle"
+					class="flex h-16 md:h-20 items-center justify-center bg-white border-l border-r md:border-none! border-neutral-300 cursor-pointer px-4"
+				>
+					<Icon name="search" class="size-6 md:size-8" />
 				</button>
 			</div>
 		</div>
@@ -336,4 +342,55 @@ const menus: MenuItem[] = prepareMenuItems(currentPath, [
 			});
 		});
 	});
+
+	
+	window.addEventListener("DOMContentLoaded", () => {
+    // ✅ Initialize Pagefind (safe even if it runs multiple times)
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      translations: { placeholder: "Search..." },
+    });
+
+    // ✅ Select elements safely
+    const toggle = document.getElementById("search-toggle");
+    const modal = document.getElementById("SearchWrapper");
+    const close = document.getElementById("search-close");
+
+		console.log("toggle: ", toggle);
+
+    // ✅ Define handlers
+    const openSearch = () => {
+      if (!modal) return;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+      // Focus input after small delay
+      setTimeout(() => {
+        const input = modal.querySelector("input.pagefind-ui__search-input");
+        input?.focus();
+      }, 100);
+    };
+
+    const closeSearch = () => {
+      if (!modal) return;
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    };
+
+    // ✅ Add event listeners only if elements exist
+    if (toggle) toggle.addEventListener("click", openSearch);
+    if (close) close.addEventListener("click", closeSearch);
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeSearch();
+      });
+    }
+
+    // ✅ Global ESC key close (safe)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeSearch();
+    });
+  });
 </script>

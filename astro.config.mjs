@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
 // import vercel from '@astrojs/vercel';
-import vercelStatic from '@astrojs/vercel/static';
+// import vercelStatic from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,5 +25,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   output: 'static',
-  adapter: vercelStatic()
+  // adapter: vercelStatic()
 });
