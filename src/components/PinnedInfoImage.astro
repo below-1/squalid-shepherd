@@ -6,15 +6,16 @@ export type PinnedInfoImageProps = {
   paletteKey: PaletteKey;
   mainTerm: string;
   secondaryTerm: string;
+  class?: string;
 };
 
 type Props = PinnedInfoImageProps;
 
-const props = Astro.props;
+const { class: className, ...props } = Astro.props;
 const color = colors[props.paletteKey];
 ---
 
-<div class="group h-full overflow-clip" style={{ background: color.main }}>
+<div class:list={["group h-full overflow-clip", className]} style={{ background: color.main }}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 250 250"

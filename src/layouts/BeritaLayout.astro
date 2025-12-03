@@ -12,10 +12,12 @@ import { getLatestPengumumanItems } from "../services/pengumuman";
 import ListingSnapshot from "../components/ListingSnapshot.astro";
 import PengumumanSideItem from "../components/PengumumanSideItem.astro";
 import BeritaSideItem from "../components/BeritaSideItem.astro";
+import PinnedInfoImage from '../components/PinnedInfoImage.astro';
+import { colorKeys } from '../utils/colors';
 
 type Props = CollectionEntry<'berita'>['data'];
 
-const { title, date, coverImage } = Astro.props;
+const { title, date, coverImage, pinnedMainTerm, pinnedSecondaryTerm } = Astro.props;
 
 const pengumuman = await getLatestPengumumanItems(4);
 const berita = await getLatestBeritaItems(4);
@@ -49,7 +51,18 @@ const berita = await getLatestBeritaItems(4);
 				<main class="w-full md:w-4/6 space-y-8 bg-white border border-neutral-300">
 					
 					<div class="w-full">
-						{coverImage && <Image src={coverImage} class="object-cover w-full h-[400px]" alt="" />}
+						{coverImage 
+							? (<Image src={coverImage} class="object-cover w-full h-[400px]" alt="" />)
+							: (
+								pinnedMainTerm ? (
+									<PinnedInfoImage
+										class='w-full max-h-64 flex items-center justify-center'
+										mainTerm={pinnedMainTerm}
+										secondaryTerm={pinnedSecondaryTerm ?? ""}
+										paletteKey={colorKeys[2] as any}
+									/>
+								) : null
+							)}
 					</div>
 	
 					<article class="px-4 pb-8">
